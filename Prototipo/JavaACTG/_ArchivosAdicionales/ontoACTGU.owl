@@ -1,0 +1,1289 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sosa="http://www.w3.org/ns/sosa/"
+    xmlns:actgu="http://www.msicu.onto/actgu#"
+    xmlns:DUL2="http://www.loa-cnr.it/ontologies/DUL.owl#"
+    xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.msicu.onto/"/>
+  <rdfs:Class rdf:about="http://www.msicu.onto/actgu#Label"/>
+  <rdfs:Class rdf:about="http://www.msicu.onto/actgu#Noun"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#NumPriority"/>
+  <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#NumClothes"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#Vector"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#ThermalComfort"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#CloValue"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#Clothes"/>
+  <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#Priority"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#NumType"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#Type"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#State"/>
+  <owl:Class rdf:about="http://www.msicu.onto/actgu#Gender"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#numerateGroup"/>
+  <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observes">
+    <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#numerateType">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Type"/>
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#NumType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#present">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#State"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Noun"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#is">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Gender"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#has">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#ThermalComfort"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#isProducedBy"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#configured"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#numeratePriority">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Priority"/>
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#NumPriority"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#isEquippedBy"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#suscribe">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Label"/>
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#NumClothes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#kind">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Type"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#hasValue">
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#Anthropometric"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#form"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#isSortOf">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#NumPriority"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#numerateClothes">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Clothes"/>
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#NumClothes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy">
+    <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#utilize">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#Vector"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#influencedIn">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#ThermalComfort"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#isClassifiedBy">
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#CloValue"/>
+    <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#usedTo"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#equippeWith">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#CloValue"/>
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#Clothes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasDeployment"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#characterizes"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#produce"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#isPhysicalWearOf"/>
+  <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#isDescribedBy">
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#CloValue"/>
+    <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#dressed">
+    <rdfs:range rdf:resource="http://www.msicu.onto/actgu#NumClothes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#take">
+    <rdfs:domain rdf:resource="http://www.msicu.onto/actgu#Vector"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.msicu.onto/actgu#isOccupiedBy"/>
+  <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_6">
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.06 clo) y calzado (tenis o zapatos, 0.02)">
+        <actgu:equippeWith>
+          <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.08">
+            <actgu:isDescribedBy>
+              <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes">
+                <owl:topDataProperty>insulation of clothes</owl:topDataProperty>
+              </ssn:Property>
+            </actgu:isDescribedBy>
+            <actgu:isClassifiedBy>
+              <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo">
+                <owl:topDataProperty>clo</owl:topDataProperty>
+              </DUL2:UnitOfMeasure>
+            </actgu:isClassifiedBy>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >0.08</owl:topDataProperty>
+          </actgu:CloValue>
+        </actgu:equippeWith>
+        <owl:topDataProperty>h:prendas interiores (varias, 0.06 clo) y calzado (tenis o zapatos, 0.02)</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.06 clo) y calzado (sandalias, 0.02)">
+        <actgu:equippeWith rdf:resource="http://www.msicu.onto/actgu#CloValue_0.08"/>
+        <owl:topDataProperty>m:prendas interiores (varias, 0.06 clo) y calzado (sandalias, 0.02)</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_:prendas de tela delgada (pantalón, 0.15), prendas normales (camisa o blusa de manga corta, 0.17)">
+        <actgu:equippeWith>
+          <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.32">
+            <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+            <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >0.32</owl:topDataProperty>
+          </actgu:CloValue>
+        </actgu:equippeWith>
+        <owl:topDataProperty>:prendas de tela delgada (pantalón, 0.15), prendas normales (camisa o blusa de manga corta, 0.17)</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:subscribe>
+      <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa normal para verano">
+        <owl:topDataProperty>Ropa normal para verano</owl:topDataProperty>
+      </actgu:Label>
+    </actgu:subscribe>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >6</owl:topDataProperty>
+  </actgu:NumClothes>
+  <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_kilograms">
+    <owl:topDataProperty>kilograms</owl:topDataProperty>
+  </DUL2:UnitOfMeasure>
+  <actgu:NumGroup rdf:about="http://www.msicu.onto/actgu#NumGroup_2">
+    <actgu:numerateGroup>
+      <foaf:Group rdf:about="http://xmlns.com/foaf/0.1/Group_Clase W">
+        <foaf:member>
+          <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_8">
+            <actgu:has>
+              <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_+3">
+                <owl:topDataProperty>+3</owl:topDataProperty>
+              </actgu:ThermalComfort>
+            </actgu:has>
+            <actgu:usedTo>
+              <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-3.4615384615384617_15.0_30.0_28.0_-15.0">
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_28.0_-15.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_-15.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >-15.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take>
+                      <actgu:Condition rdf:about="http://www.msicu.onto/actgu#Condition_28.0">
+                        <actgu:isDescribedBy>
+                          <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_temperature">
+                            <owl:topDataProperty>temperature</owl:topDataProperty>
+                          </ssn:Property>
+                        </actgu:isDescribedBy>
+                        <actgu:isClassifiedBy>
+                          <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_celsius">
+                            <owl:topDataProperty>celsius</owl:topDataProperty>
+                          </DUL2:UnitOfMeasure>
+                        </actgu:isClassifiedBy>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >28.0</owl:topDataProperty>
+                      </actgu:Condition>
+                    </actgu:take>
+                    <owl:topDataProperty>28.0_-15.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_15.0_30.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_30.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >30.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take>
+                      <actgu:Condition rdf:about="http://www.msicu.onto/actgu#Condition_15.0">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_temperature"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_celsius"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >15.0</owl:topDataProperty>
+                      </actgu:Condition>
+                    </actgu:take>
+                    <owl:topDataProperty>15.0_30.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:form>
+                  <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-3.4615384615384617">
+                    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >-3.4615384615384617</owl:topDataProperty>
+                  </actgu:SlopeOfComfort>
+                </actgu:form>
+                <owl:topDataProperty>-3.4615384615384617_15.0_30.0_28.0_-15.0</owl:topDataProperty>
+              </actgu:ComfortTrend>
+            </actgu:usedTo>
+            <actgu:isSortOf>
+              <actgu:NumPriority rdf:about="http://www.msicu.onto/actgu#NumPriority_1">
+                <actgu:numeratePriority>
+                  <actgu:Priority rdf:about="http://www.msicu.onto/actgu#Priority_Alumno">
+                    <owl:topDataProperty>Alumno</owl:topDataProperty>
+                  </actgu:Priority>
+                </actgu:numeratePriority>
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                >1</owl:topDataProperty>
+              </actgu:NumPriority>
+            </actgu:isSortOf>
+            <actgu:dressed>
+              <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_3">
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.07 clo) y calzado (zapatos, 0.02)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.09">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >0.09</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>h:prendas interiores (varias, 0.07 clo) y calzado (zapatos, 0.02)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.07 clo) y calzado (botas, 0.10)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.17">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >0.17</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>m:prendas interiores (varias, 0.07 clo) y calzado (botas, 0.10)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_:prendas de tela gruesa (pantalón, 0.24; suéter, 0.36), prendas normales (camisa o blusa de manga corta, 0.17)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.77">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >0.77</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>:prendas de tela gruesa (pantalón, 0.24; suéter, 0.36), prendas normales (camisa o blusa de manga corta, 0.17)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:subscribe>
+                  <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa ligera para invierno">
+                    <owl:topDataProperty>Ropa ligera para invierno</owl:topDataProperty>
+                  </actgu:Label>
+                </actgu:subscribe>
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                >3</owl:topDataProperty>
+              </actgu:NumClothes>
+            </actgu:dressed>
+            <foaf:name>
+              <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_Alum005">
+                <owl:topDataProperty>Alum005</owl:topDataProperty>
+              </actgu:Noun>
+            </foaf:name>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >8</owl:topDataProperty>
+          </foaf:Person>
+        </foaf:member>
+        <foaf:member>
+          <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_7">
+            <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <actgu:usedTo>
+              <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-2.1538461538461537_15.0_18.0_28.0_-10.0">
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_28.0_-10.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_-10.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >-10.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_28.0"/>
+                    <owl:topDataProperty>28.0_-10.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_15.0_18.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_18.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >18.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_15.0"/>
+                    <owl:topDataProperty>15.0_18.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:form>
+                  <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-2.1538461538461537">
+                    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >-2.1538461538461537</owl:topDataProperty>
+                  </actgu:SlopeOfComfort>
+                </actgu:form>
+                <owl:topDataProperty>-2.1538461538461537_15.0_18.0_28.0_-10.0</owl:topDataProperty>
+              </actgu:ComfortTrend>
+            </actgu:usedTo>
+            <actgu:isSortOf rdf:resource="http://www.msicu.onto/actgu#NumPriority_1"/>
+            <actgu:dressed>
+              <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_5">
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.06 clo) y calzado (zapatos, 0.02)">
+                    <actgu:equippeWith rdf:resource="http://www.msicu.onto/actgu#CloValue_0.08"/>
+                    <owl:topDataProperty>h:prendas interiores (varias, 0.06 clo) y calzado (zapatos, 0.02)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.06 clo) y calzado (zapatillas, 0.03)">
+                    <actgu:equippeWith rdf:resource="http://www.msicu.onto/actgu#CloValue_0.09"/>
+                    <owl:topDataProperty>m:prendas interiores (varias, 0.06 clo) y calzado (zapatillas, 0.03)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes rdf:resource="http://www.msicu.onto/actgu#Clothes_:prendas de tela delgada (pantalón, 0.15), prendas normales (camisa o blusa de manga corta, 0.17)"/>
+                <actgu:subscribe>
+                  <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa pesada para verano">
+                    <owl:topDataProperty>Ropa pesada para verano</owl:topDataProperty>
+                  </actgu:Label>
+                </actgu:subscribe>
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                >5</owl:topDataProperty>
+              </actgu:NumClothes>
+            </actgu:dressed>
+            <foaf:name>
+              <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_Alum004">
+                <owl:topDataProperty>Alum004</owl:topDataProperty>
+              </actgu:Noun>
+            </foaf:name>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >7</owl:topDataProperty>
+          </foaf:Person>
+        </foaf:member>
+        <foaf:member>
+          <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_6">
+            <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <actgu:usedTo>
+              <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-2.4615384615384617_15.0_20.0_28.0_-12.0">
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_28.0_-12.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_-12.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >-12.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_28.0"/>
+                    <owl:topDataProperty>28.0_-12.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_15.0_20.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_20.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >20.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_15.0"/>
+                    <owl:topDataProperty>15.0_20.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:form>
+                  <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-2.4615384615384617">
+                    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >-2.4615384615384617</owl:topDataProperty>
+                  </actgu:SlopeOfComfort>
+                </actgu:form>
+                <owl:topDataProperty>-2.4615384615384617_15.0_20.0_28.0_-12.0</owl:topDataProperty>
+              </actgu:ComfortTrend>
+            </actgu:usedTo>
+            <actgu:isSortOf rdf:resource="http://www.msicu.onto/actgu#NumPriority_1"/>
+            <actgu:dressed rdf:resource="http://www.msicu.onto/actgu#NumClothes_5"/>
+            <foaf:name>
+              <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_Alum003">
+                <owl:topDataProperty>Alum003</owl:topDataProperty>
+              </actgu:Noun>
+            </foaf:name>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >6</owl:topDataProperty>
+          </foaf:Person>
+        </foaf:member>
+        <foaf:member>
+          <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_5">
+            <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <actgu:usedTo>
+              <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-3.8461538461538463_15.0_35.0_28.0_-15.0">
+                <actgu:utilize rdf:resource="http://www.msicu.onto/actgu#Vector_28.0_-15.0"/>
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_15.0_35.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_35.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >35.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_15.0"/>
+                    <owl:topDataProperty>15.0_35.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:form>
+                  <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-3.8461538461538463">
+                    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >-3.8461538461538463</owl:topDataProperty>
+                  </actgu:SlopeOfComfort>
+                </actgu:form>
+                <owl:topDataProperty>-3.8461538461538463_15.0_35.0_28.0_-15.0</owl:topDataProperty>
+              </actgu:ComfortTrend>
+            </actgu:usedTo>
+            <actgu:isSortOf rdf:resource="http://www.msicu.onto/actgu#NumPriority_1"/>
+            <actgu:dressed>
+              <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_2">
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.10 clo) y calzado (botas, 0.10)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.2">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >0.2</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>h:prendas interiores (varias, 0.10 clo) y calzado (botas, 0.10)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.10 clo) y calzado (botas, 0.10)">
+                    <actgu:equippeWith rdf:resource="http://www.msicu.onto/actgu#CloValue_0.2"/>
+                    <owl:topDataProperty>m:prendas interiores (varias, 0.10 clo) y calzado (botas, 0.10)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_:prendas de tela gruesa (pantalón, 0.24; suéter, 0.36; chamarra, 0.44), prendas normales (camisa o blusa de manga corta, 0.17)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_1.21">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >1.21</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>:prendas de tela gruesa (pantalón, 0.24; suéter, 0.36; chamarra, 0.44), prendas normales (camisa o blusa de manga corta, 0.17)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:subscribe>
+                  <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa normal para invierno">
+                    <owl:topDataProperty>Ropa normal para invierno</owl:topDataProperty>
+                  </actgu:Label>
+                </actgu:subscribe>
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                >2</owl:topDataProperty>
+              </actgu:NumClothes>
+            </actgu:dressed>
+            <foaf:name>
+              <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_Alum002">
+                <owl:topDataProperty>Alum002</owl:topDataProperty>
+              </actgu:Noun>
+            </foaf:name>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >5</owl:topDataProperty>
+          </foaf:Person>
+        </foaf:member>
+        <foaf:member>
+          <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_4">
+            <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <actgu:usedTo>
+              <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-4.615384615384615_15.0_25.0_28.0_-35.0">
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_28.0_-35.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_-35.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >-35.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_28.0"/>
+                    <owl:topDataProperty>28.0_-35.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:utilize>
+                  <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_15.0_25.0">
+                    <actgu:take>
+                      <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_25.0">
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >25.0</owl:topDataProperty>
+                      </actgu:Tendency>
+                    </actgu:take>
+                    <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_15.0"/>
+                    <owl:topDataProperty>15.0_25.0</owl:topDataProperty>
+                  </actgu:Vector>
+                </actgu:utilize>
+                <actgu:form>
+                  <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-4.615384615384615">
+                    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >-4.615384615384615</owl:topDataProperty>
+                  </actgu:SlopeOfComfort>
+                </actgu:form>
+                <owl:topDataProperty>-4.615384615384615_15.0_25.0_28.0_-35.0</owl:topDataProperty>
+              </actgu:ComfortTrend>
+            </actgu:usedTo>
+            <actgu:isSortOf rdf:resource="http://www.msicu.onto/actgu#NumPriority_1"/>
+            <actgu:dressed>
+              <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_4">
+                <actgu:numerateClothes rdf:resource="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.07 clo) y calzado (zapatos, 0.02)"/>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.07 clo) y calzado (zapatillas, 0.03)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.1">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >0.1</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>m:prendas interiores (varias, 0.07 clo) y calzado (zapatillas, 0.03)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:numerateClothes>
+                  <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_:prendas de tela delgada (pantalón, 0.15; suéter, 0.25), prendas normales (camisa o blusa de manga corta, 0.17)">
+                    <actgu:equippeWith>
+                      <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.57">
+                        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+                        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+                        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                        >0.57</owl:topDataProperty>
+                      </actgu:CloValue>
+                    </actgu:equippeWith>
+                    <owl:topDataProperty>:prendas de tela delgada (pantalón, 0.15; suéter, 0.25), prendas normales (camisa o blusa de manga corta, 0.17)</owl:topDataProperty>
+                  </actgu:Clothes>
+                </actgu:numerateClothes>
+                <actgu:subscribe>
+                  <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa neutral">
+                    <owl:topDataProperty>Ropa neutral</owl:topDataProperty>
+                  </actgu:Label>
+                </actgu:subscribe>
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                >4</owl:topDataProperty>
+              </actgu:NumClothes>
+            </actgu:dressed>
+            <foaf:name>
+              <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_Alum001">
+                <owl:topDataProperty>Alum001</owl:topDataProperty>
+              </actgu:Noun>
+            </foaf:name>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >4</owl:topDataProperty>
+          </foaf:Person>
+        </foaf:member>
+        <owl:topDataProperty>Clase W</owl:topDataProperty>
+      </foaf:Group>
+    </actgu:numerateGroup>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</owl:topDataProperty>
+  </actgu:NumGroup>
+  <actgu:MetabolicRate rdf:about="http://www.msicu.onto/actgu#MetabolicRate_1.00">
+    <actgu:isClassifiedBy>
+      <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_met">
+        <owl:topDataProperty>met</owl:topDataProperty>
+      </DUL2:UnitOfMeasure>
+    </actgu:isClassifiedBy>
+    <actgu:isPhysicalWearOf rdf:resource="http://xmlns.com/foaf/0.1/Person_4"/>
+    <actgu:isPhysicalWearOf rdf:resource="http://xmlns.com/foaf/0.1/Person_5"/>
+    <actgu:isPhysicalWearOf>
+      <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_2">
+        <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+        <actgu:usedTo>
+          <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-4.230769230769231_15.0_35.0_28.0_-20.0">
+            <actgu:utilize>
+              <actgu:Vector rdf:about="http://www.msicu.onto/actgu#Vector_28.0_-20.0">
+                <actgu:take>
+                  <actgu:Tendency rdf:about="http://www.msicu.onto/actgu#Tendency_-20.0">
+                    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >-20.0</owl:topDataProperty>
+                  </actgu:Tendency>
+                </actgu:take>
+                <actgu:take rdf:resource="http://www.msicu.onto/actgu#Condition_28.0"/>
+                <owl:topDataProperty>28.0_-20.0</owl:topDataProperty>
+              </actgu:Vector>
+            </actgu:utilize>
+            <actgu:utilize rdf:resource="http://www.msicu.onto/actgu#Vector_15.0_35.0"/>
+            <actgu:form>
+              <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-4.230769230769231">
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                >-4.230769230769231</owl:topDataProperty>
+              </actgu:SlopeOfComfort>
+            </actgu:form>
+            <owl:topDataProperty>-4.230769230769231_15.0_35.0_28.0_-20.0</owl:topDataProperty>
+          </actgu:ComfortTrend>
+        </actgu:usedTo>
+        <actgu:isSortOf rdf:resource="http://www.msicu.onto/actgu#NumPriority_1"/>
+        <actgu:dressed rdf:resource="http://www.msicu.onto/actgu#NumClothes_2"/>
+        <foaf:name>
+          <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_P00B">
+            <owl:topDataProperty>P00B</owl:topDataProperty>
+          </actgu:Noun>
+        </foaf:name>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:topDataProperty>
+      </foaf:Person>
+    </actgu:isPhysicalWearOf>
+    <actgu:isPhysicalWearOf rdf:resource="http://xmlns.com/foaf/0.1/Person_8"/>
+    <actgu:isPhysicalWearOf>
+      <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_3">
+        <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+        <actgu:usedTo>
+          <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-3.076923076923077_15.0_20.0_28.0_-20.0">
+            <actgu:utilize rdf:resource="http://www.msicu.onto/actgu#Vector_28.0_-20.0"/>
+            <actgu:utilize rdf:resource="http://www.msicu.onto/actgu#Vector_15.0_20.0"/>
+            <actgu:form>
+              <actgu:SlopeOfComfort rdf:about="http://www.msicu.onto/actgu#SlopeOfComfort_-3.076923076923077">
+                <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                >-3.076923076923077</owl:topDataProperty>
+              </actgu:SlopeOfComfort>
+            </actgu:form>
+            <owl:topDataProperty>-3.076923076923077_15.0_20.0_28.0_-20.0</owl:topDataProperty>
+          </actgu:ComfortTrend>
+        </actgu:usedTo>
+        <actgu:isSortOf>
+          <actgu:NumPriority rdf:about="http://www.msicu.onto/actgu#NumPriority_2">
+            <actgu:numeratePriority>
+              <actgu:Priority rdf:about="http://www.msicu.onto/actgu#Priority_Docente">
+                <owl:topDataProperty>Docente</owl:topDataProperty>
+              </actgu:Priority>
+            </actgu:numeratePriority>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >2</owl:topDataProperty>
+          </actgu:NumPriority>
+        </actgu:isSortOf>
+        <actgu:dressed rdf:resource="http://www.msicu.onto/actgu#NumClothes_4"/>
+        <foaf:name>
+          <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_P00C">
+            <owl:topDataProperty>P00C</owl:topDataProperty>
+          </actgu:Noun>
+        </foaf:name>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >3</owl:topDataProperty>
+      </foaf:Person>
+    </actgu:isPhysicalWearOf>
+    <actgu:isPhysicalWearOf>
+      <foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Person_1">
+        <actgu:has rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+        <actgu:usedTo>
+          <actgu:ComfortTrend rdf:about="http://www.msicu.onto/actgu#ComfortTrend_-3.4615384615384617_15.0_35.0_28.0_-10.0">
+            <actgu:utilize rdf:resource="http://www.msicu.onto/actgu#Vector_28.0_-10.0"/>
+            <actgu:utilize rdf:resource="http://www.msicu.onto/actgu#Vector_15.0_35.0"/>
+            <actgu:form rdf:resource="http://www.msicu.onto/actgu#SlopeOfComfort_-3.4615384615384617"/>
+            <owl:topDataProperty>-3.4615384615384617_15.0_35.0_28.0_-10.0</owl:topDataProperty>
+          </actgu:ComfortTrend>
+        </actgu:usedTo>
+        <actgu:isSortOf rdf:resource="http://www.msicu.onto/actgu#NumPriority_1"/>
+        <actgu:dressed rdf:resource="http://www.msicu.onto/actgu#NumClothes_3"/>
+        <foaf:name>
+          <actgu:Noun rdf:about="http://www.msicu.onto/actgu#Noun_P00A">
+            <owl:topDataProperty>P00A</owl:topDataProperty>
+          </actgu:Noun>
+        </foaf:name>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:topDataProperty>
+      </foaf:Person>
+    </actgu:isPhysicalWearOf>
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >1.00</owl:topDataProperty>
+    <actgu:isDescribedBy>
+      <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_metabolic rate">
+        <owl:topDataProperty>metabolic rate</owl:topDataProperty>
+      </ssn:Property>
+    </actgu:isDescribedBy>
+    <actgu:isPhysicalWearOf rdf:resource="http://xmlns.com/foaf/0.1/Person_6"/>
+    <actgu:isPhysicalWearOf rdf:resource="http://xmlns.com/foaf/0.1/Person_7"/>
+  </actgu:MetabolicRate>
+  <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_7">
+    <actgu:numerateClothes rdf:resource="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.06 clo) y calzado (tenis o zapatos, 0.02)"/>
+    <actgu:numerateClothes rdf:resource="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.06 clo) y calzado (sandalias, 0.02)"/>
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_:prendas inferiores (short o bermuda, 0.08) y prendas superiores (camisa o blusa de manga corta, 0.17">
+        <actgu:equippeWith>
+          <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.25">
+            <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+            <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >0.25</owl:topDataProperty>
+          </actgu:CloValue>
+        </actgu:equippeWith>
+        <owl:topDataProperty>:prendas inferiores (short o bermuda, 0.08) y prendas superiores (camisa o blusa de manga corta, 0.17</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:subscribe>
+      <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa ligera para verano">
+        <owl:topDataProperty>Ropa ligera para verano</owl:topDataProperty>
+      </actgu:Label>
+    </actgu:subscribe>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >7</owl:topDataProperty>
+  </actgu:NumClothes>
+  <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_-3">
+    <owl:topDataProperty>-3</owl:topDataProperty>
+  </actgu:ThermalComfort>
+  <actgu:InsulationValue rdf:about="http://www.msicu.onto/actgu#InsulationValue_0.41">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_7"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_6"/>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >0.41</owl:topDataProperty>
+  </actgu:InsulationValue>
+  <actgu:NumGroup rdf:about="http://www.msicu.onto/actgu#NumGroup_1">
+    <actgu:numerateGroup>
+      <foaf:Group rdf:about="http://xmlns.com/foaf/0.1/Group_Clase H">
+        <foaf:member rdf:resource="http://xmlns.com/foaf/0.1/Person_3"/>
+        <foaf:member rdf:resource="http://xmlns.com/foaf/0.1/Person_2"/>
+        <foaf:member rdf:resource="http://xmlns.com/foaf/0.1/Person_1"/>
+        <owl:topDataProperty>Clase H</owl:topDataProperty>
+      </foaf:Group>
+    </actgu:numerateGroup>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</owl:topDataProperty>
+  </actgu:NumGroup>
+  <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_-2">
+    <owl:topDataProperty>-2</owl:topDataProperty>
+  </actgu:ThermalComfort>
+  <actgu:ConfigurationValue rdf:about="http://www.msicu.onto/actgu#ConfigurationValue_30.0">
+    <actgu:configured>
+      <actgu:Actuator rdf:about="http://www.msicu.onto/actgu#Actuator_2">
+        <actgu:produce>
+          <ssn:ObservationValue rdf:about="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_1.3">
+            <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <DUL:isClassifiedBy>
+              <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_metre per second">
+                <owl:topDataProperty>metre per second</owl:topDataProperty>
+              </DUL2:UnitOfMeasure>
+            </DUL:isClassifiedBy>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >1.3</owl:topDataProperty>
+          </ssn:ObservationValue>
+        </actgu:produce>
+        <actgu:produce>
+          <ssn:ObservationValue rdf:about="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_55.0">
+            <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <DUL:isClassifiedBy>
+              <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_percentage">
+                <owl:topDataProperty>percentage</owl:topDataProperty>
+              </DUL2:UnitOfMeasure>
+            </DUL:isClassifiedBy>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >55.0</owl:topDataProperty>
+          </ssn:ObservationValue>
+        </actgu:produce>
+        <actgu:produce>
+          <ssn:ObservationValue rdf:about="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_40.0">
+            <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <DUL:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_celsius"/>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >40.0</owl:topDataProperty>
+          </ssn:ObservationValue>
+        </actgu:produce>
+        <actgu:produce>
+          <ssn:ObservationValue rdf:about="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_340.0">
+            <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+            <DUL:isClassifiedBy>
+              <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_parts per million">
+                <owl:topDataProperty>parts per million</owl:topDataProperty>
+              </DUL2:UnitOfMeasure>
+            </DUL:isClassifiedBy>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >340.0</owl:topDataProperty>
+          </ssn:ObservationValue>
+        </actgu:produce>
+        <actgu:kind>
+          <actgu:Type rdf:about="http://www.msicu.onto/actgu#Type_calefactor">
+            <owl:topDataProperty>calefactor</owl:topDataProperty>
+          </actgu:Type>
+        </actgu:kind>
+        <actgu:present>
+          <actgu:State rdf:about="http://www.msicu.onto/actgu#State_a">
+            <owl:topDataProperty>a</owl:topDataProperty>
+          </actgu:State>
+        </actgu:present>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:topDataProperty>
+      </actgu:Actuator>
+    </actgu:configured>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_temperature"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_celsius"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >30.0</owl:topDataProperty>
+  </actgu:ConfigurationValue>
+  <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_-1">
+    <owl:topDataProperty>-1</owl:topDataProperty>
+  </actgu:ThermalComfort>
+  <actgu:Anthropometry rdf:about="http://www.msicu.onto/actgu#Anthropometry_50.00_1.60">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_7"/>
+    <actgu:hasValue>
+      <actgu:AnthropometricValue rdf:about="http://www.msicu.onto/actgu#AnthropometricValue_31.25">
+        <actgu:isDescribedBy>
+          <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_body mass index">
+            <owl:topDataProperty>body mass index</owl:topDataProperty>
+          </ssn:Property>
+        </actgu:isDescribedBy>
+        <actgu:isClassifiedBy>
+          <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_bmi">
+            <owl:topDataProperty>bmi</owl:topDataProperty>
+          </DUL2:UnitOfMeasure>
+        </actgu:isClassifiedBy>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+        >31.25</owl:topDataProperty>
+      </actgu:AnthropometricValue>
+    </actgu:hasValue>
+    <owl:topDataProperty>50.00_1.60</owl:topDataProperty>
+  </actgu:Anthropometry>
+  <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_weight">
+    <owl:topDataProperty>weight</owl:topDataProperty>
+  </ssn:Property>
+  <actgu:InsulationValue rdf:about="http://www.msicu.onto/actgu#InsulationValue_1.41">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_5"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_2"/>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >1.41</owl:topDataProperty>
+  </actgu:InsulationValue>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_m_55">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_3"/>
+    <actgu:is>
+      <actgu:Age rdf:about="http://www.msicu.onto/actgu#Age_55">
+        <actgu:isClassifiedBy>
+          <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_years">
+            <owl:topDataProperty>years</owl:topDataProperty>
+          </DUL2:UnitOfMeasure>
+        </actgu:isClassifiedBy>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >55</owl:topDataProperty>
+      </actgu:Age>
+    </actgu:is>
+    <actgu:is>
+      <actgu:Gender rdf:about="http://www.msicu.onto/actgu#Gender_m">
+        <owl:topDataProperty>m</owl:topDataProperty>
+      </actgu:Gender>
+    </actgu:is>
+    <owl:topDataProperty>m_55</owl:topDataProperty>
+  </actgu:Demographic>
+  <actgu:NumType rdf:about="http://www.msicu.onto/actgu#NumType_1">
+    <actgu:numerateType>
+      <actgu:Type rdf:about="http://www.msicu.onto/actgu#Type_aire acondicionado">
+        <owl:topDataProperty>aire acondicionado</owl:topDataProperty>
+      </actgu:Type>
+    </actgu:numerateType>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</owl:topDataProperty>
+  </actgu:NumType>
+  <actgu:ConfigurationValue rdf:about="http://www.msicu.onto/actgu#ConfigurationValue_0">
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_parts per million"/>
+    <actgu:isDescribedBy>
+      <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_air velocity">
+        <owl:topDataProperty>air velocity</owl:topDataProperty>
+      </ssn:Property>
+    </actgu:isDescribedBy>
+    <actgu:configured>
+      <actgu:Actuator rdf:about="http://www.msicu.onto/actgu#Actuator_5">
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_1.3"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_55.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_40.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_340.0"/>
+        <actgu:kind>
+          <actgu:Type rdf:about="http://www.msicu.onto/actgu#Type_puerta">
+            <owl:topDataProperty>puerta</owl:topDataProperty>
+          </actgu:Type>
+        </actgu:kind>
+        <actgu:present rdf:resource="http://www.msicu.onto/actgu#State_a"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >5</owl:topDataProperty>
+      </actgu:Actuator>
+    </actgu:configured>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >0</owl:topDataProperty>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_temperature"/>
+    <actgu:isDescribedBy>
+      <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_gas concentration">
+        <owl:topDataProperty>gas concentration</owl:topDataProperty>
+      </ssn:Property>
+    </actgu:isDescribedBy>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_metre per second"/>
+    <actgu:isDescribedBy>
+      <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_humidity">
+        <owl:topDataProperty>humidity</owl:topDataProperty>
+      </ssn:Property>
+    </actgu:isDescribedBy>
+    <actgu:configured>
+      <actgu:Actuator rdf:about="http://www.msicu.onto/actgu#Actuator_1">
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_1.3"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_55.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_40.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_340.0"/>
+        <actgu:kind rdf:resource="http://www.msicu.onto/actgu#Type_aire acondicionado"/>
+        <actgu:present rdf:resource="http://www.msicu.onto/actgu#State_a"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:topDataProperty>
+      </actgu:Actuator>
+    </actgu:configured>
+    <actgu:configured rdf:resource="http://www.msicu.onto/actgu#Actuator_2"/>
+    <actgu:configured>
+      <actgu:Actuator rdf:about="http://www.msicu.onto/actgu#Actuator_3">
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_1.3"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_55.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_40.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_340.0"/>
+        <actgu:kind>
+          <actgu:Type rdf:about="http://www.msicu.onto/actgu#Type_ventilador">
+            <owl:topDataProperty>ventilador</owl:topDataProperty>
+          </actgu:Type>
+        </actgu:kind>
+        <actgu:present rdf:resource="http://www.msicu.onto/actgu#State_a"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >3</owl:topDataProperty>
+      </actgu:Actuator>
+    </actgu:configured>
+    <actgu:configured>
+      <actgu:Actuator rdf:about="http://www.msicu.onto/actgu#Actuator_4">
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_1.3"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_55.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_40.0"/>
+        <actgu:produce rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_340.0"/>
+        <actgu:kind>
+          <actgu:Type rdf:about="http://www.msicu.onto/actgu#Type_ventanas">
+            <owl:topDataProperty>ventanas</owl:topDataProperty>
+          </actgu:Type>
+        </actgu:kind>
+        <actgu:present rdf:resource="http://www.msicu.onto/actgu#State_a"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >4</owl:topDataProperty>
+      </actgu:Actuator>
+    </actgu:configured>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_percentage"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_celsius"/>
+  </actgu:ConfigurationValue>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_m_30">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_8"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_6"/>
+    <actgu:is>
+      <actgu:Age rdf:about="http://www.msicu.onto/actgu#Age_30">
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_years"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >30</owl:topDataProperty>
+      </actgu:Age>
+    </actgu:is>
+    <actgu:is rdf:resource="http://www.msicu.onto/actgu#Gender_m"/>
+    <owl:topDataProperty>m_30</owl:topDataProperty>
+  </actgu:Demographic>
+  <actgu:Anthropometry rdf:about="http://www.msicu.onto/actgu#Anthropometry_55.00_1.55">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_6"/>
+    <actgu:hasValue>
+      <actgu:AnthropometricValue rdf:about="http://www.msicu.onto/actgu#AnthropometricValue_35.48">
+        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_body mass index"/>
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_bmi"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+        >35.48</owl:topDataProperty>
+      </actgu:AnthropometricValue>
+    </actgu:hasValue>
+    <owl:topDataProperty>55.00_1.55</owl:topDataProperty>
+  </actgu:Anthropometry>
+  <ssn:Property rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property_height">
+    <owl:topDataProperty>height</owl:topDataProperty>
+  </ssn:Property>
+  <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_+2">
+    <owl:topDataProperty>+2</owl:topDataProperty>
+  </actgu:ThermalComfort>
+  <actgu:InsulationValue rdf:about="http://www.msicu.onto/actgu#InsulationValue_0.94">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_8"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_1"/>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >0.94</owl:topDataProperty>
+  </actgu:InsulationValue>
+  <DUL2:UnitOfMeasure rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_meters">
+    <owl:topDataProperty>meters</owl:topDataProperty>
+  </DUL2:UnitOfMeasure>
+  <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_+1">
+    <owl:topDataProperty>+1</owl:topDataProperty>
+  </actgu:ThermalComfort>
+  <actgu:ThermalComfort rdf:about="http://www.msicu.onto/actgu#ThermalComfort_0">
+    <owl:topDataProperty>0</owl:topDataProperty>
+  </actgu:ThermalComfort>
+  <actgu:NumType rdf:about="http://www.msicu.onto/actgu#NumType_4">
+    <actgu:numerateType rdf:resource="http://www.msicu.onto/actgu#Type_ventanas"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</owl:topDataProperty>
+  </actgu:NumType>
+  <ssn:SensorOutput rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensorOutput_1">
+    <ssn:hasValue rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_340.0"/>
+    <ssn:isProducedBy>
+      <ssn:Sensor rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor_1">
+        <ssn:observes rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_gas concentration"/>
+        <ssn:hasDeployment>
+          <ssn:Deployment rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Deployment_class room">
+            <actgu:isOccupiedBy rdf:resource="http://xmlns.com/foaf/0.1/Group_clase w"/>
+            <actgu:isOccupiedBy rdf:resource="http://xmlns.com/foaf/0.1/Group_clase h"/>
+            <actgu:isOccupiedBy rdf:resource="http://www.msicu.onto/actgu#Actuator_5"/>
+            <actgu:isOccupiedBy rdf:resource="http://www.msicu.onto/actgu#Actuator_4"/>
+            <actgu:isOccupiedBy rdf:resource="http://www.msicu.onto/actgu#Actuator_3"/>
+            <actgu:isOccupiedBy rdf:resource="http://www.msicu.onto/actgu#Actuator_2"/>
+            <actgu:isOccupiedBy rdf:resource="http://www.msicu.onto/actgu#Actuator_1"/>
+            <owl:topDataProperty>class room</owl:topDataProperty>
+          </ssn:Deployment>
+        </ssn:hasDeployment>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:topDataProperty>
+      </ssn:Sensor>
+    </ssn:isProducedBy>
+    <owl:topDataProperty>1</owl:topDataProperty>
+  </ssn:SensorOutput>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_h_25">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_4"/>
+    <actgu:is>
+      <actgu:Age rdf:about="http://www.msicu.onto/actgu#Age_25">
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_years"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >25</owl:topDataProperty>
+      </actgu:Age>
+    </actgu:is>
+    <actgu:is>
+      <actgu:Gender rdf:about="http://www.msicu.onto/actgu#Gender_h">
+        <owl:topDataProperty>h</owl:topDataProperty>
+      </actgu:Gender>
+    </actgu:is>
+    <owl:topDataProperty>h_25</owl:topDataProperty>
+  </actgu:Demographic>
+  <ssn:SensorOutput rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensorOutput_2">
+    <ssn:hasValue rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_40.0"/>
+    <ssn:isProducedBy>
+      <ssn:Sensor rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor_2">
+        <ssn:observes rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_temperature"/>
+        <ssn:hasDeployment rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Deployment_class room"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:topDataProperty>
+      </ssn:Sensor>
+    </ssn:isProducedBy>
+    <owl:topDataProperty>2</owl:topDataProperty>
+  </ssn:SensorOutput>
+  <actgu:NumType rdf:about="http://www.msicu.onto/actgu#NumType_5">
+    <actgu:numerateType rdf:resource="http://www.msicu.onto/actgu#Type_puerta"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</owl:topDataProperty>
+  </actgu:NumType>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_h_26">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_2"/>
+    <actgu:is>
+      <actgu:Age rdf:about="http://www.msicu.onto/actgu#Age_26">
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_years"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >26</owl:topDataProperty>
+      </actgu:Age>
+    </actgu:is>
+    <actgu:is rdf:resource="http://www.msicu.onto/actgu#Gender_h"/>
+    <owl:topDataProperty>h_26</owl:topDataProperty>
+  </actgu:Demographic>
+  <ssn:SensorOutput rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensorOutput_3">
+    <ssn:hasValue rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_55.0"/>
+    <ssn:isProducedBy>
+      <ssn:Sensor rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor_3">
+        <ssn:observes rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_humidity"/>
+        <ssn:hasDeployment rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Deployment_class room"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >3</owl:topDataProperty>
+      </ssn:Sensor>
+    </ssn:isProducedBy>
+    <owl:topDataProperty>3</owl:topDataProperty>
+  </ssn:SensorOutput>
+  <actgu:State rdf:about="http://www.msicu.onto/actgu#State_e">
+    <owl:topDataProperty>e</owl:topDataProperty>
+  </actgu:State>
+  <actgu:NumType rdf:about="http://www.msicu.onto/actgu#NumType_2">
+    <actgu:numerateType rdf:resource="http://www.msicu.onto/actgu#Type_calefactor"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</owl:topDataProperty>
+  </actgu:NumType>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_h_27">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_5"/>
+    <actgu:is>
+      <actgu:Age rdf:about="http://www.msicu.onto/actgu#Age_27">
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_years"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >27</owl:topDataProperty>
+      </actgu:Age>
+    </actgu:is>
+    <actgu:is rdf:resource="http://www.msicu.onto/actgu#Gender_h"/>
+    <owl:topDataProperty>h_27</owl:topDataProperty>
+  </actgu:Demographic>
+  <actgu:Anthropometry rdf:about="http://www.msicu.onto/actgu#Anthropometry_65.00_1.63">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_8"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_2"/>
+    <actgu:hasValue>
+      <actgu:AnthropometricValue rdf:about="http://www.msicu.onto/actgu#AnthropometricValue_39.88">
+        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_body mass index"/>
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_bmi"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+        >39.88</owl:topDataProperty>
+      </actgu:AnthropometricValue>
+    </actgu:hasValue>
+    <owl:topDataProperty>65.00_1.63</owl:topDataProperty>
+  </actgu:Anthropometry>
+  <actgu:NumClothes rdf:about="http://www.msicu.onto/actgu#NumClothes_1">
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_h:prendas interiores (varias, 0.67 clo) y calzado (botas, 0.10)">
+        <actgu:equippeWith rdf:resource="http://www.msicu.onto/actgu#CloValue_0.77"/>
+        <owl:topDataProperty>h:prendas interiores (varias, 0.67 clo) y calzado (botas, 0.10)</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_m:prendas interiores (varias, 0.25 clo) y calzado (botas, 0.10)">
+        <actgu:equippeWith>
+          <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_0.35">
+            <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+            <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >0.35</owl:topDataProperty>
+          </actgu:CloValue>
+        </actgu:equippeWith>
+        <owl:topDataProperty>m:prendas interiores (varias, 0.25 clo) y calzado (botas, 0.10)</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:numerateClothes>
+      <actgu:Clothes rdf:about="http://www.msicu.onto/actgu#Clothes_:prendas de tela gruesa (pantalón, 0.24 clo; suéter, 0.36; chamarra, 0.44), prendas normales (camisa o blusa de manga larga, 0.34)">
+        <actgu:equippeWith>
+          <actgu:CloValue rdf:about="http://www.msicu.onto/actgu#CloValue_1.38">
+            <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+            <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+            <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+            >1.38</owl:topDataProperty>
+          </actgu:CloValue>
+        </actgu:equippeWith>
+        <owl:topDataProperty>:prendas de tela gruesa (pantalón, 0.24 clo; suéter, 0.36; chamarra, 0.44), prendas normales (camisa o blusa de manga larga, 0.34)</owl:topDataProperty>
+      </actgu:Clothes>
+    </actgu:numerateClothes>
+    <actgu:subscribe>
+      <actgu:Label rdf:about="http://www.msicu.onto/actgu#Label_Ropa pesada para invierno">
+        <owl:topDataProperty>Ropa pesada para invierno</owl:topDataProperty>
+      </actgu:Label>
+    </actgu:subscribe>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</owl:topDataProperty>
+  </actgu:NumClothes>
+  <ssn:SensorOutput rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensorOutput_4">
+    <ssn:hasValue rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ObservationValue_1.3"/>
+    <ssn:isProducedBy>
+      <ssn:Sensor rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor_4">
+        <ssn:observes rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_air velocity"/>
+        <ssn:hasDeployment rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Deployment_class room"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >4</owl:topDataProperty>
+      </ssn:Sensor>
+    </ssn:isProducedBy>
+    <owl:topDataProperty>4</owl:topDataProperty>
+  </ssn:SensorOutput>
+  <actgu:NumType rdf:about="http://www.msicu.onto/actgu#NumType_3">
+    <actgu:numerateType rdf:resource="http://www.msicu.onto/actgu#Type_ventilador"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</owl:topDataProperty>
+  </actgu:NumType>
+  <actgu:Anthropometry rdf:about="http://www.msicu.onto/actgu#Anthropometry_65.00_1.60">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_5"/>
+    <actgu:hasValue>
+      <actgu:AnthropometricValue rdf:about="http://www.msicu.onto/actgu#AnthropometricValue_40.63">
+        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_body mass index"/>
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_bmi"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+        >40.63</owl:topDataProperty>
+      </actgu:AnthropometricValue>
+    </actgu:hasValue>
+    <owl:topDataProperty>65.00_1.60</owl:topDataProperty>
+  </actgu:Anthropometry>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_m_24">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_7"/>
+    <actgu:is>
+      <actgu:Age rdf:about="http://www.msicu.onto/actgu#Age_24">
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_years"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >24</owl:topDataProperty>
+      </actgu:Age>
+    </actgu:is>
+    <actgu:is rdf:resource="http://www.msicu.onto/actgu#Gender_m"/>
+    <owl:topDataProperty>m_24</owl:topDataProperty>
+  </actgu:Demographic>
+  <actgu:InsulationValue rdf:about="http://www.msicu.onto/actgu#InsulationValue_0.66">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_4"/>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >0.66</owl:topDataProperty>
+  </actgu:InsulationValue>
+  <actgu:Anthropometry rdf:about="http://www.msicu.onto/actgu#Anthropometry_60.00_1.55">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_1"/>
+    <actgu:hasValue>
+      <actgu:AnthropometricValue rdf:about="http://www.msicu.onto/actgu#AnthropometricValue_38.71">
+        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_body mass index"/>
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_bmi"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+        >38.71</owl:topDataProperty>
+      </actgu:AnthropometricValue>
+    </actgu:hasValue>
+    <owl:topDataProperty>60.00_1.55</owl:topDataProperty>
+  </actgu:Anthropometry>
+  <actgu:Demographic rdf:about="http://www.msicu.onto/actgu#Demographic_m_25">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_1"/>
+    <actgu:is rdf:resource="http://www.msicu.onto/actgu#Age_25"/>
+    <actgu:is rdf:resource="http://www.msicu.onto/actgu#Gender_m"/>
+    <owl:topDataProperty>m_25</owl:topDataProperty>
+  </actgu:Demographic>
+  <actgu:InsulationValue rdf:about="http://www.msicu.onto/actgu#InsulationValue_0.67">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:isEquippedBy rdf:resource="http://xmlns.com/foaf/0.1/Person_3"/>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_insulation of clothes"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_clo"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >0.67</owl:topDataProperty>
+  </actgu:InsulationValue>
+  <actgu:Anthropometry rdf:about="http://www.msicu.onto/actgu#Anthropometry_80.00_1.70">
+    <actgu:influencedIn rdf:resource="http://www.msicu.onto/actgu#ThermalComfort_+3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_3"/>
+    <actgu:characterizes rdf:resource="http://xmlns.com/foaf/0.1/Person_4"/>
+    <actgu:hasValue>
+      <actgu:AnthropometricValue rdf:about="http://www.msicu.onto/actgu#AnthropometricValue_47.06">
+        <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_body mass index"/>
+        <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_bmi"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+        >47.06</owl:topDataProperty>
+      </actgu:AnthropometricValue>
+    </actgu:hasValue>
+    <owl:topDataProperty>80.00_1.70</owl:topDataProperty>
+  </actgu:Anthropometry>
+  <actgu:ConfigurationValue rdf:about="http://www.msicu.onto/actgu#ConfigurationValue_20.0">
+    <actgu:configured rdf:resource="http://www.msicu.onto/actgu#Actuator_1"/>
+    <actgu:isDescribedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property_temperature"/>
+    <actgu:isClassifiedBy rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure_celsius"/>
+    <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >20.0</owl:topDataProperty>
+  </actgu:ConfigurationValue>
+</rdf:RDF>

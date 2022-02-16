@@ -1,0 +1,755 @@
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_estado
+WHERE {
+	?actuador rdf:type actgu:Actuator .
+	?actuador owl:topDataProperty 5 .
+	?estado rdf:type actgu:State .
+	?actuador actgu:present ?estado .
+	?estado owl:topDataProperty ?val_estado
+}
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_tipoact
+WHERE {
+	?actuador rdf:type actgu:Actuator .
+	?actuador owl:topDataProperty 5 .
+	?tipoact rdf:type actgu:Type .
+	?actuador actgu:kind ?tipoact .
+	?tipoact owl:topDataProperty ?val_tipoact
+}
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_estado ?val_tipoact
+WHERE {
+	?actuador rdf:type actgu:Actuator .
+	?actuador owl:topDataProperty 5 .
+	?estado rdf:type actgu:State .
+	?actuador actgu:present ?estado .
+	?tipoact rdf:type actgu:Type .
+	?actuador actgu:present ?tipoact .
+	?estado owl:topDataProperty ?val_estado .
+	?tipoact owl:topDataProperty ?val_tipoact
+}
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?persona ?pmv
+WHERE {
+	?persona rdf:type foaf:Person .
+	?persona owl:topDataProperty 15 .
+	?pmv rdf:type actgu:ThermalComfort .
+	?persona actgu:has ?pmv
+}
+
+
+
+
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_numhrang ?val_hrarang
+WHERE {
+		?hrarang rdf:type actgu:DayTimeRange .
+        ?numhrang rdf:type actgu:NumDayTimeRange .
+        ?numhrang actgu:numerateDayTimeRange ?hrarang .
+
+        ?hrarang owl:topDataProperty ?val_hrarang .
+        ?numhrang owl:topDataProperty ?val_numhrang .
+
+        FILTER ((datatype(?val_hrarang)) = xsd:string) .
+        FILTER ((datatype(?val_numhrang)) = xsd:nonNegativeInteger)
+}
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_numprioridad ?clase
+WHERE {
+        # Recuperar instancia de actuador
+        ?numprioridad rdf:type actgu:NumPriority .
+        ?numprioridad owl:topDataProperty ?val_numprioridad .
+        ?val_numprioridad rdf:type ?clase .
+        FILTER ((datatype(?val_numprioridad)) = xsd:nonNegativeInteger)
+}
+
+
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED
+?val_actuador ?val_estado ?val_tipoact ?val_numtipoact
+?val_temp ?val_hume ?val_vair ?val_cgas
+WHERE {
+	# >> Recuperar los valores de ACTUADOR
+	?actuador rdf:type actgu:Actuator .
+	?estado rdf:type actgu:State .
+	?tipoact rdf:type actgu:Type .
+	?numtipoact rdf:type actgu:NumType .
+
+	# Formar las relaciones de los valores
+	?actuador actgu:present ?estado .
+	?actuador actgu:present ?tipoact .
+	?numtipoact actgu:numerate ?tipoact .
+
+	# >> Recuperar la información sobre la TEMPERATURA
+    ?tempproper rdf:type ssn:Property .
+    ?tempproper owl:topDataProperty "temperature" .
+    ?tempconfig rdf:type actgu:ConfigurationValue .
+    ?tempconfig actgu:isDescribedBy ?tempproper .
+    
+    # >> Recuperar la información sobre la HUMEDAD
+    ?humdproper rdf:type ssn:Property .
+    ?humdproper owl:topDataProperty "humidity" .
+    ?humdconfig rdf:type actgu:ConfigurationValue .
+    ?humdconfig actgu:isDescribedBy ?humdproper .
+    
+    # >>  Recuperar la información sobre la CONCENTRACIÓN DE GAS
+    ?cgasproper rdf:type ssn:Property .
+    ?cgasproper owl:topDataProperty "gas concentration" .
+    ?cgasconfig rdf:type actgu:ConfigurationValue .
+    ?cgasconfig actgu:isDescribedBy ?cgasproper .
+    
+    # >> Recuperar la información sobre la VELOCIDAD DEL AIRE
+    ?vaireproper rdf:type ssn:Property .
+    ?vaireproper owl:topDataProperty "air velocity" .
+    ?vairconfig rdf:type actgu:ConfigurationValue .
+    ?vairconfig actgu:isDescribedBy ?vaireproper .
+
+	# Formar las relaciones de los valores
+	?tempconfig actgu:configured ?actuador
+	?humdconfig actgu:configured ?actuador
+	?cgasconfig actgu:configured ?actuador
+    ?vairconfig actgu:configured ?actuador
+    
+	# >> Recuperar valores de ACTUADOR
+	?actuador owl:topDataProperty ?val_actuador .
+	?estado owl:topDataProperty ?val_estado .
+	?tipoact owl:topDataProperty ?val_tipoact .
+	?numtipoact owl:topDataProperty ?val_numtipoact .
+
+	?tempconfig owl:topDataProperty ?val_temp .
+	?humdconfig owl:topDataProperty ?val_hume .
+	?vairconfig owl:topDataProperty ?val_vair .
+	?cgasconfig owl:topDataProperty ?val_cgas .
+	
+	FILTER ((datatype(?val_actuador)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_estado)) = xsd:string) .
+	FILTER ((datatype(?val_tipoact)) = xsd:string) .
+	FILTER ((datatype(?val_numtipoact)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_temp)) = xsd:double) .
+	FILTER ((datatype(?val_hume)) = xsd:double) .
+	FILTER ((datatype(?val_vair)) = xsd:double) .
+	FILTER ((datatype(?val_cgas)) = xsd:double)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_numclo ?val_nonclo ?val_desclo
+WHERE {
+	# >> Recuperar el CLO que viste actualmente cada persona
+	?numclo rdf:type actgu:Clothes .
+	?numclo owl:topDataProperty 1 .
+
+	# >> Recuperar CLO Value
+	?nonclo rdf:type actgu:CloValue .
+	?numclo actgu:numerate ?nonclo .
+
+	# >> Recuperar CLO Descripcion
+	?desclo rdf:type actgu:Abstract .
+	?nonclo actgu:describe ?desclo .
+
+	# >> Recuperar valor de CLO
+	?numclo owl:topDataProperty ?val_numclo .
+	?nonclo owl:topDataProperty ?val_nonclo .
+	?desclo owl:topDataProperty ?val_desclo .
+	
+	FILTER ((datatype(?val_numclo)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_nonclo)) = xsd:double) .
+	FILTER ((datatype(?val_desclo)) = xsd:string)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED
+?val_numgrp ?val_grupo
+?val_prioridad ?val_nonpriori
+?val_persona ?val_sexo ?val_edad ?val_pesoaltura
+?val_numambientcond ?val_midambientcond ?val_desambientcond ?val_numclo
+
+WHERE {
+	# >> Recuperar instancias de grupo
+	?grupo rdf:type foaf:Group .
+	?numgrp rdf:type actgu:NumGroup .
+	?numgrp actgu:numerate ?grupo .
+	# >> Recupera a todas las personas
+	?persona rdf:type foaf:Person .
+	?grupo foaf:member ?persona .
+	# >> Recuperar instancias de priroridad
+	?prioridad rdf:type actgu:Priority .
+	?nonpriori rdf:type actgu:NounPriority .
+	?prioridad actgu:numerate ?nonpriori .
+	?persona actgu:isSortOf ?prioridad .
+	
+	# >> Recuperar la información demografica de cada persona
+	?demografico rdf:type actgu:Demographic .
+	?demografico actgu:characterizes ?persona .
+	# -- -- Recuperar y tomar solo el GENERO de la persona
+	?sexo rdf:type actgu:Gender .
+	?demografico actgu:is ?sexo .
+	# -- -- Recuperar y tomar solo la EDAD de la persona
+	?edad rdf:type actgu:Age .
+	?demografico actgu:is ?edad .
+
+	# >> Recuperar la información antropometrica de cada persona
+	?pesoaltura rdf:type actgu:Anthropometry .
+	?pesoaltura actgu:characterizes ?persona .
+	# >> Recuperar el CLO que viste actualmente cada persona
+	?numclo rdf:type actgu:Clothes .
+	?persona actgu:dressed ?numclo .
+
+	# >> Recuperar la temperatura maxima preferida por cada persona
+	?numambientcond rdf:type actgu:NumAmbt .
+	?midambientcond rdf:type actgu:AmbientCondition .
+	?desambientcond rdf:type actgu:Abstract .
+	?numambientcond actgu:numerate ?midambientcond .
+	?midambientcond actgu:describe ?desambientcond .
+	?persona actgu:middleEnjoy ?midambientcond .
+
+	# >> Recuperar el dato de las variables consultadas
+	# -- -- Datos sobre la persona
+	?grupo owl:topDataProperty ?val_grupo .
+	?numgrp owl:topDataProperty ?val_numgrp .
+	?persona owl:topDataProperty ?val_persona .
+	?nonpriori owl:topDataProperty ?val_nonpriori .
+	?prioridad owl:topDataProperty ?val_prioridad .
+	?sexo owl:topDataProperty ?val_sexo .
+	?edad owl:topDataProperty ?val_edad .
+	?pesoaltura owl:topDataProperty ?val_pesoaltura  .
+	?numclo owl:topDataProperty ?val_numclo .
+	?numambientcond owl:topDataProperty ?val_numambientcond .
+	?midambientcond owl:topDataProperty ?val_midambientcond .
+	?desambientcond owl:topDataProperty ?val_desambientcond .
+	
+	FILTER ((datatype(?val_grupo)) = xsd:string) .
+	FILTER ((datatype(?val_numgrp)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_nonpriori)) = xsd:string) .
+	FILTER ((datatype(?val_prioridad)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_sexo)) = xsd:string) .
+	FILTER ((datatype(?val_edad)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_pesoaltura)) = xsd:string) .
+	FILTER ((datatype(?val_numclo)) = xsd:string) .
+	FILTER ((datatype(?val_numambientcond)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_midambientcond)) = xsd:double) .
+	FILTER ((datatype(?val_desambientcond)) = xsd:string)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_persona ?val_prioridad ?val_sexo ?val_edad ?val_pmvpreferido ?val_tempmaxgusta ?val_tempmingusta ?val_pmvpresenta ?val_temperatura ?val_congas ?pvmvalido_byedad ?pvmvalido_bybmi ?aceptable_byreglas ?aceptable_bytemps
+WHERE {
+	# >> Recuperar instancia de un determinado grupo
+	?grupo rdf:type foaf:Group .
+    ?grupo owl:topDataProperty "7a" .
+	# >> Recupera a todas las personas
+	?persona rdf:type foaf:Person .
+	?grupo foaf:member ?persona .
+	# >> Recuperar la prioridad de cada persona
+	?prioridad rdf:type actgu:Priority .
+	?persona actgu:isSortOf ?prioridad .
+	# >> Recuperar la información demografica de cada persona
+	?demografico rdf:type actgu:Demographic .
+	?demografico actgu:characterizes ?persona .
+	# -- >> Recuperar y tomar solo el GENERO de la persona
+	?sexo rdf:type actgu:Gender .
+	?demografico actgu:is ?sexo .
+	# -- >> Recuperar y tomar solo la EDAD de la persona
+	?edad rdf:type actgu:Age .
+	?demografico actgu:is ?edad .
+	# >> Recuperar la información antropometrica de cada persona
+	?atropometrico rdf:type actgu:Anthropometry .
+	?atropometrico actgu:characterizes ?persona .
+	?bmi rdf:type actgu:AnthropometricValue .
+	?atropometrico actgu:hasValue ?bmi .
+	?unidadmed rdf:type dul2:UnitOfMeasure .
+	?unidadmed owl:topDataProperty "bmi" .
+	?bmi actgu:isClassifiedBy ?unidadmed .
+	# >> Recuperar el PMV preferido de cada persona
+	?pmvpreferido rdf:type actgu:ThermalComfort .
+	?persona actgu:likes ?pmvpreferido .
+	# >> Recuperar la temperatura maxima preferida por cada persona
+	?tempmaxgusta rdf:type actgu:AmbientCondition .
+	?persona actgu:maximumEnjoy ?tempmaxgusta .
+	# >> Recuperar la temperatura minima preferida por cada persona
+	?tempmingusta rdf:type actgu:AmbientCondition .
+	?persona actgu:minimumEnjoy ?tempmingusta .
+	# >> Recuperar el PMV que tiene actualmente cada persona
+	?pmvpresenta rdf:type actgu:ThermalComfort .
+	?persona actgu:has ?pmvpresenta .
+	# >> Recuperar el MET que tiene actualmente cada persona
+	?met rdf:type actgu:MetabolicRate .
+	?persona actgu:hasPhysicalWear ?met .
+	# >> Recuperar el CLO que viste actualmente cada persona
+	?cloviste rdf:type actgu:InsulationValue .
+	?cloviste actgu:isEquippedBy ?persona .
+	# >> Recuperar la información sobre el sentor de TEMPERATURA
+	?tempproper rdf:type ssn:Property .
+	?tempproper owl:topDataProperty "temperature" .
+	?tempsensor rdf:type ssn:Sensor .
+	?tempsensor ssn:observes ?tempproper .   
+	?tempsenout rdf:type ssn:SensorOutput .
+	?tempsenout ssn:isProducedBy ?tempsensor .
+	?temperatura rdf:type ssn:ObservationValue .
+	?tempsenout ssn:hasValue ?temperatura .	
+	# >> Recuperar la información sobre el sentor de CONCENTRACIÓN DE GAS
+	?cgasproper rdf:type ssn:Property .
+	?cgasproper owl:topDataProperty "gas concentration" .
+	?cgassensor rdf:type ssn:Sensor .
+	?cgassensor ssn:observes ?cgasproper .   
+	?cgassenout rdf:type ssn:SensorOutput .
+	?cgassenout ssn:isProducedBy ?cgassensor .
+	?congas rdf:type ssn:ObservationValue .
+	?cgassenout ssn:hasValue ?congas .
+	# >> Recuperar el dato de las variables consultadas
+	# -- >> Datos sobre la persona
+	?persona owl:topDataProperty ?val_persona .
+	?prioridad owl:topDataProperty ?val_prioridad .
+	?sexo owl:topDataProperty ?val_sexo .
+	?edad owl:topDataProperty ?val_edad .
+	?bmi owl:topDataProperty ?val_bmi  .
+	?met owl:topDataProperty ?val_met .
+	?cloviste owl:topDataProperty ?val_cloviste .
+	# -- >> Datos de Confort Térmico
+	?pmvpreferido owl:topDataProperty ?val_pmvpreferido .
+	?pmvpresenta owl:topDataProperty ?val_pmvpresenta .
+	# -- >> Datos sobre preferencias
+	?tempmaxgusta owl:topDataProperty ?val_tempmaxgusta .
+	?tempmingusta owl:topDataProperty ?val_tempmingusta .
+	# -- >> Datos sobre condiciones ambientales actuales
+	?temperatura owl:topDataProperty ?val_temperatura .
+	?congas owl:topDataProperty ?val_congas .
+	# >> Recuperar el dato de las variables consultadas
+	BIND (	COALESCE(
+				IF(?val_edad > 50 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_edad <= 50 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_edad > 50 && ?val_sexo = "m", "0", 1/0),
+				IF(?val_edad <= 50 && ?val_sexo = "m", "+1", 1/0),
+				"0"
+			) AS ?pvmvalido_byedad) .
+	BIND (	COALESCE(
+				IF(?val_bmi >= 35.0 && ?val_sexo = "h", "-2", 1/0),
+				IF(?val_bmi >= 25.0 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_bmi >= 18.5 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_bmi >= 35.0 && ?val_sexo = "m", "-1", 1/0),
+				IF(?val_bmi >= 25.0 && ?val_sexo = "m", "0", 1/0),
+				IF(?val_bmi >= 18.5 && ?val_sexo = "m", "1", 1/0),
+				"0"
+			) AS ?pvmvalido_bybmi) .
+	BIND (	COALESCE(
+				IF(?val_congas >= 1000, "false", 1/0),
+				IF(?val_pmvpresenta = ?val_pmvpreferido, "true", 1/0),
+				IF(?val_pmvpresenta = ?pvmvalido_byedad, "true", 1/0),
+				IF(?val_pmvpresenta = ?pvmvalido_bybmi, "true", 1/0),
+				IF( ?pvmvalido_bybmi = "-2" &&
+				    ?val_pmvpresenta = "-1", "true", 1/0),
+				IF(?val_pmvpresenta = "0", "true", 1/0),
+				"false"
+			) AS ?aceptable_byreglas) .
+	BIND (	COALESCE(
+				IF(	?val_congas >= 1000, "false", 1/0),
+				IF(	?val_temperatura <= ?val_tempmaxgusta &&
+					?val_temperatura >= ?val_tempmingusta, "true", 1/0),
+				"false"
+			) AS ?aceptable_bytemps) .
+	FILTER ((datatype(?val_bmi)) = xsd:double) .
+	FILTER ((datatype(?val_met)) = xsd:double) .
+	FILTER ((datatype(?val_cloviste)) = xsd:double) .
+	FILTER ((datatype(?val_pmvpreferido)) = xsd:string) .
+	FILTER ((datatype(?val_pmvpresenta)) = xsd:string) .
+	FILTER ((datatype(?val_tempmaxgusta)) = xsd:double) .
+	FILTER ((datatype(?val_tempmingusta)) = xsd:double) .
+	FILTER ((datatype(?val_temperatura)) = xsd:double) .
+	FILTER ((datatype(?val_congas)) = xsd:double) .
+	FILTER ((datatype(?val_sexo)) = xsd:string) .
+	FILTER ((datatype(?val_edad)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_prioridad)) = xsd:nonNegativeInteger)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_grupo ?val_persona ?val_pmvpresenta ?aceptable_byreglas
+WHERE {
+	# >> Recuperar instancia de un determinado grupo
+	?grupo rdf:type foaf:Group .
+    ?grupo owl:topDataProperty "7a" .
+	# >> Recupera a todas las personas
+	?persona rdf:type foaf:Person .
+	?grupo foaf:member ?persona .
+	# >> Recuperar el PMV que tiene actualmente cada persona
+	?pmvpresenta rdf:type actgu:ThermalComfort .
+	?persona actgu:has ?pmvpresenta .
+	# >> Recuperar el dato de las variables consultadas
+	# -- >> Datos sobre la persona
+	?grupo owl:topDataProperty ?val_grupo .
+	?persona owl:topDataProperty ?val_persona .
+	# -- >> Datos de Confort Térmico
+	?pmvpresenta owl:topDataProperty ?val_pmvpresenta .
+	# >> Recuperar el dato de las variables consultadas
+	BIND (	COALESCE(
+				IF(?val_pmvpresenta = "0", "true", 1/0),
+				"false"	) AS ?aceptable_byreglas) .
+	FILTER ((datatype(?val_pmvpresenta)) = xsd:string) .
+	FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger)
+}
+
+
+
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT
+	?persona ?sexo ?edad ?pmvpreferido ?pmvpresenta ?aceptabilidad ?vvvv ?tttt ?val_prioridad
+WHERE {
+		?persona rdf:type foaf:Person .
+		
+		?prioridad rdf:type actgu:Priority .
+		?prioridad actgu:characterizes ?persona .
+		?prioridad owl:topDataProperty ?val_prioridad .
+
+		?demografico rdf:type actgu:Demographic .
+		?demografico actgu:characterizes ?persona .
+		?sexo rdf:type actgu:Gender .
+		?demografico actgu:is ?sexo .
+		?edad rdf:type actgu:Age .
+		?demografico actgu:is ?edad .
+
+		?sexo owl:topDataProperty ?val_sexo .
+		?edad owl:topDataProperty ?val_edad .
+
+		?pmvpreferido rdf:type actgu:ThermalComfort .
+		?persona actgu:likes ?pmvpreferido .
+
+		?pmvpresenta rdf:type actgu:ThermalComfort .
+		?persona actgu:has ?pmvpresenta .
+
+		?pmvpreferido owl:topDataProperty ?val_pmvpreferido .
+		?pmvpresenta owl:topDataProperty ?val_pmvpresenta .
+
+		BIND ( ?val_pmvpreferido = "+3" AS ?vvvv)  .
+
+		BIND (
+			COALESCE(
+				IF(?val_prioridad >= 2 || ?val_sexo = "m",
+					"A", 1/0),
+				IF(?val_prioridad >= 1  && ?val_sexo = "h",
+					"B", 1/0),
+				"F"
+			) AS ?tttt) .
+
+		BIND ( IF(?val_pmvpreferido = ?val_pmvpresenta, "true", "false") AS ?aceptabilidad) .
+
+		FILTER ((datatype(?val_prioridad)) = xsd:nonNegativeInteger) 
+
+	}

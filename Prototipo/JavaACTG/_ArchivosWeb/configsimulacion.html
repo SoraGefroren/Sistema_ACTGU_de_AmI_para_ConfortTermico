@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simulador ACTGU</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- SCRIPTS Bases - Foundation -->
+	<script
+		src="assets/_foundation/js/vendor/jquery.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+	<script
+		src="assets/_foundation/js/vendor/foundation.min.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+
+	<!-- ESTILOS Bases - Foundation -->
+	<link
+		type="text/css"
+		rel="stylesheet"
+		href="assets/_foundation/css/foundation-icons.css" />
+	<link
+		type="text/css"
+		rel="stylesheet"
+		href="assets/_foundation/css/foundation.min.css">
+		
+	<!-- ESTILOS Personales -->
+	<link
+		type="text/css"
+		rel="stylesheet"
+		href="assets/css/index.css">
+</head>
+
+<body>
+
+	<!-- BARRA SUPERIOR -->
+	<div class="top-bar actgu-style-bar">
+		<div class="top-bar-left">
+			<ul class="menu">
+				<li class="menu">
+					<a href="/">
+						<strong>
+							Sistema ACTGU
+						</strong>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- TITULO -->
+	<div class="grid-container actgu-container">
+		<!-- FILA -->
+		<div class="small-12 text-center">
+			<h5>
+				Configuración de la simulación
+			</h5>
+		</div>
+	</div>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-3">
+				</div>
+				<div class="small-6">
+					<div class="grid-x">
+
+						<div class="small-5 align-self-middle">
+							<label
+								for="ctrl_sl_estrategia"
+								class="text-right middle actgu-ctrl-label">
+								Estrategia de Confort para grupos:
+							</label>
+						</div>
+						<div class="small-3 align-self-middle">
+							<select
+								id="ctrl_sl_estrategia">
+								<option value="006">ASHRAE 55 (Tradicional)</option>
+								<option value="001">Promedio</option>
+								<option value="002">Placer máximo</option>
+								<option value="003">Miseria mínima</option>
+								<option value="004">El más respetado</option>
+								<option value="005">El más popular</option>
+							</select>
+						</div>
+                                                <div class="small-4">
+                                                    <div class="grid-x">
+                                                            <div class="small-2 align-self-middle text-center">
+                                                                <input class="actgu-ctrl-checkbox"
+                                                                       id="ctrl_cb_politica"
+                                                                       type="checkbox">
+                                                            </div>
+                                                            <div class="small-10 align-self-middle">
+                                                                <label 	tabindex="2"
+                                                                        data-tooltip
+                                                                        data-position="bottom"
+                                                                        data-alignment="center"
+                                                                        title="El chequeo de este control indica al sistema que se hará uso del modelo de Preferencias Subjetivas de Usuario (PSU). No chequearlo implica que se hará uso del modelo Tradicional Extendido (TE), que esta principalmente descrito por el estándar ASHRAE 55."
+                                                                        class="text-left middle actgu-ctrl-label"
+                                                                        id="ctrl_lbl_politica"
+                                                                        for="ctrl_cb_politica">
+                                                                        Utilizar modelo PSU
+                                                                </label>
+                                                            </div>
+                                                    </div>
+						</div>
+
+						<div class="small-6 align-self-middle">
+							<label  for="ctrl_input_saltos"
+								class="text-right middle actgu-ctrl-label">
+								Número de iteraciones:
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_saltos"
+								type="number"
+								max="10"
+								min="0"
+								placeholder="Número de iteraciones">
+						</div>
+						<div class="small-4">
+						</div>
+
+
+						<div class="small-6 align-self-middle">
+							<label
+								for="ctrl_input_tiempo"
+								class="text-right middle actgu-ctrl-label">
+								Duración de la iteración:
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_tiempo"
+								type="number"
+								max="300"
+								min="5"
+								placeholder="Duración de cada iteración">
+						</div>
+						<div class="small-4 align-self-middle">
+							<label
+								for="ctrl_input_tiempo"
+								class="text-left middle actgu-ctrl-label">
+								segundos
+							</label>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-3">
+				</div>
+				<div class="small-6">
+					<div class="grid-x">
+
+						<div class="small-4 align-self-middle">
+						</div>
+						<div class="small-4 align-self-middle">
+							<label
+								class="text-left middle actgu-ctrl-label">
+								Condiciones de inicio
+							</label>
+						</div>
+						<div class="small-4 align-self-middle">
+							<label
+								class="text-left middle actgu-ctrl-label">
+								Incremento por iteración
+							</label>
+						</div>
+
+						<div class="small-4 align-self-middle">
+							<label
+								class="text-right middle actgu-ctrl-label">
+								Temperatura:
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_val_temperatura"
+								type="number"
+								max="50"
+								min="0"
+								placeholder="Temperatura">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_val_temperatura"
+								class="text-left middle actgu-ctrl-label">
+								°C
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_incr_temperatura"
+								type="number"
+								max="50"
+								min="0"
+								placeholder="Temperatura">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_incr_temperatura"
+								class="text-left middle actgu-ctrl-label">
+								°C
+							</label>
+						</div>
+
+						<div class="small-4 align-self-middle">
+							<label
+								class="text-right middle actgu-ctrl-label">
+								Humedad:
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_val_humedad"
+								type="number"
+								max="100"
+								min="0"
+								placeholder="Humedad">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_val_humedad"
+								class="text-left middle actgu-ctrl-label">
+								%
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_incr_humedad"
+								type="number"
+								max="100"
+								min="0"
+								placeholder="Humedad">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_incr_humedad"
+								class="text-left middle actgu-ctrl-label">
+								%
+							</label>
+						</div>
+
+						<div class="small-4 align-self-middle">
+							<label
+								class="text-right middle actgu-ctrl-label">
+								Concentración de gas:
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_val_gas"
+								type="number"
+								max="10000"
+								min="0"
+								placeholder="Concentración de gas">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_val_gas"
+								class="text-left middle actgu-ctrl-label">
+								ppm
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_incr_gas"
+								type="number"
+								max="10000"
+								min="0"
+								placeholder="Concentración de gas">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_incr_gas"
+								class="text-left middle actgu-ctrl-label">
+								ppm
+							</label>
+						</div>
+
+						<div class="small-4 align-self-middle">
+							<label
+								class="text-right middle actgu-ctrl-label">
+								Velocidad del aire:
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_val_vel_aire"
+								type="number"
+								max="5"
+								min="0"
+								placeholder="Velocidad del aire">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_val_vel_aire"
+								class="text-left middle actgu-ctrl-label">
+								m/s
+							</label>
+						</div>
+						<div class="small-2 align-self-middle">
+							<input
+								id="ctrl_input_incr_vel_aire"
+								type="number"
+								max="5"
+								min="0"
+								placeholder="Velocidad del aire">
+						</div>
+						<div class="small-2 align-self-middle">
+							<label
+								for="ctrl_input_incr_vel_aire"
+								class="text-left middle actgu-ctrl-label">
+								m/s
+							</label>
+						</div>
+
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-3">
+				</div>
+				<div class="small-6">
+					<div class="grid-x">
+
+						<div class="small-5 align-self-middle">
+							<label
+								for="ctrl_sl_grupo"
+								class="text-right middle actgu-ctrl-label">
+								Grupo con el cual trabajar:
+							</label>
+						</div>
+						<div class="small-3 align-self-middle">
+							<select
+								id="ctrl_sl_grupo">
+								<option value="001">7a</option>
+							</select>
+						</div>
+						<div class="small-4">
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-3">
+				</div>
+				<div class="small-6">
+					<div class="grid-x">
+						<!-- BOTONES -->
+						<div class="small-12">
+							<a	id="ctrl_btn_guardarconfig"
+								class="button expanded success">
+								Guardar
+								<i class="fi-save large"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</br>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-3"></div>
+				<div class="small-6">
+					<div class="grid-x">
+						<!-- BOTONES -->
+						<div class="small-6">
+							<div class="grid-x">
+								<div class="small-11">
+									<a	href="configusergrup.html"
+										id="ctrl_btn_configsimul"
+										class="button expanded secondary">
+										Configurar usuarios y grupos
+										<i class="fi-torsos-all large"></i>
+									</a>
+								</div>
+								<div class="small-1"></div>
+							</div>
+						</div>
+						<div class="small-6">
+							<div class="grid-x">
+								<div class="small-1"></div>
+								<div class="small-11">
+									<a	href="analizadorconforttermico.html"
+										id="ctrl_btn_analizconterm"
+										class="button expanded secondary">
+										Analizar Confort Térmico
+										<i class="fi-graph-trend large"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- PIE DE PÁGINA -->
+	<div class="grid-x grid-padding-x actgu-style-bar">
+		<div class="cell small-12 align-self-middle">
+			<div class="actgu-align-center">
+				<br/>
+				<p class="actgu-no-margins">
+					leon.blanco@hotmail.com
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+						<img alt="Licencia de Creative Commons"
+							style="border-width:0"
+							src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+					</a>
+				</p>
+				<br/>
+				<p class="actgu-no-margins">
+					Este obra está bajo una<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"> licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional</a>.
+				</p>
+				<br/>
+			</div>
+		</div>
+	</div>
+
+	<!-- SCRIPTS Personales -->
+	<script
+		src="assets/js/_funciones.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+
+	<script
+		src="assets/js/configsimulacion.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+</body>
+</html>

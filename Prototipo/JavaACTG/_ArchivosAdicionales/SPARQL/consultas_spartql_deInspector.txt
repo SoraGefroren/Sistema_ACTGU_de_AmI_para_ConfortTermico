@@ -1,0 +1,380 @@
+Cuidar "GestorONTO.actualizarDataDeAmb", puede chocar con el uso de Principal.gestorCRUD para recuperarDataUsuarios y recuperarDataHVACs
+
+# Obtener datos del ambiente como un Elemento JSON - getSensorDataAmbientalAsJson()
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_temperatura ?val_humedad ?val_congas ?val_velaire
+WHERE {
+        # >> Recuperar la información sobre el sensor de TEMPERATURA
+        ?tempproper rdf:type ssn:Property .
+        ?tempproper owl:topDataProperty "temperature" .
+        ?tempsensor rdf:type ssn:Sensor .
+        ?tempsensor ssn:observes ?tempproper .
+        ?tempsenout rdf:type ssn:SensorOutput .
+        ?tempsenout ssn:isProducedBy ?tempsensor .
+        ?temperatura rdf:type ssn:ObservationValue .
+        ?tempsenout ssn:hasValue ?temperatura .
+        # >> Recuperar la información sobre el sensor de HUMEDAD
+        ?humdproper rdf:type ssn:Property .
+        ?humdproper owl:topDataProperty "humidity" .
+        ?humdsensor rdf:type ssn:Sensor .
+        ?humdsensor ssn:observes ?humdproper .   
+        ?humdsenout rdf:type ssn:SensorOutput .
+        ?humdsenout ssn:isProducedBy ?humdsensor .
+        ?humedad rdf:type ssn:ObservationValue .
+        ?humdsenout ssn:hasValue ?humedad .
+        # >>  Recuperar la información sobre el sensor de CONCENTRACIÓN DE GAS
+        ?cgasproper rdf:type ssn:Property .
+        ?cgasproper owl:topDataProperty "gas concentration" .
+        ?cgassensor rdf:type ssn:Sensor .
+        ?cgassensor ssn:observes ?cgasproper .   
+        ?cgassenout rdf:type ssn:SensorOutput .
+        ?cgassenout ssn:isProducedBy ?cgassensor .
+        ?congas rdf:type ssn:ObservationValue .
+        ?cgassenout ssn:hasValue ?congas .
+        # >> Recuperar la información sobre el sensor de VELOCIDAD DEL AIRE
+        ?vaireproper rdf:type ssn:Property .
+        ?vaireproper owl:topDataProperty "air velocity" .
+        ?vairesensor rdf:type ssn:Sensor .
+        ?vairesensor ssn:observes ?vaireproper .   
+        ?vairesenout rdf:type ssn:SensorOutput .
+        ?vairesenout ssn:isProducedBy ?vairesensor .
+        ?velaire rdf:type ssn:ObservationValue .
+        ?vairesenout ssn:hasValue ?velaire .
+        # >> Datos sobre condiciones ambientales actuales
+        ?temperatura owl:topDataProperty ?val_temperatura .
+        ?humedad owl:topDataProperty ?val_humedad .
+        ?congas owl:topDataProperty ?val_congas .
+        ?velaire owl:topDataProperty ?val_velaire .
+        FILTER ((datatype(?val_temperatura)) = xsd:double) .
+        FILTER ((datatype(?val_humedad)) = xsd:double) .
+        FILTER ((datatype(?val_congas)) = xsd:double) .
+        FILTER ((datatype(?val_velaire)) = xsd:double)
+}
+
+# Obtener datos MET de los usuarios como un Elemento JSON  - getSensorDataMETofUsrAsJson(String grupo)
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_grupo ?val_persona ?val_met
+WHERE {
+        # >> Recuperar instancia de un determinado grupo 
+        ?grupo rdf:type foaf:Group .
+        ?grupo owl:topDataProperty "7a" .
+        # >> Recuperar instancias de las personas relacionadas al grupo
+        ?persona rdf:type foaf:Person .
+        ?grupo foaf:member ?persona .
+        # Recuperar el valor MET que tiene actualmente cada persona
+        ?met rdf:type actgu:MetabolicRate .
+        ?persona actgu:hasPhysicalWear ?met .
+        # >> Recuperar el dato de las variables consultadas
+        ?grupo owl:topDataProperty ?val_grupo .
+        ?persona owl:topDataProperty ?val_persona .
+        ?met owl:topDataProperty ?val_met .
+        FILTER ((datatype(?val_grupo)) = xsd:string) .
+        FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger) .
+        FILTER ((datatype(?val_met)) = xsd:double)
+}
+
+# Obtener datos como JSON Element - getPMVDataASHRAEVersionAsJson(String grupo)
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_grupo ?val_persona ?val_met ?val_clo ?val_pmvpresenta ?aceptable_byreglas
+WHERE {
+	# >> Recuperar instancia de un determinado grupo
+	?grupo rdf:type foaf:Group .
+    ?grupo owl:topDataProperty "7a" .
+	# >> Recupera a todas las personas
+	?persona rdf:type foaf:Person .
+	?grupo foaf:member ?persona .
+	# >> Recuperar el PMV que tiene actualmente cada persona
+	?pmvpresenta rdf:type actgu:ThermalComfort .
+	?persona actgu:has ?pmvpresenta .
+	# >> Recuperar el CLO que viste actualmente cada persona
+	?clo rdf:type actgu:InsulationValue .
+	?clo actgu:isEquippedBy ?persona .
+	# >> Recuperar el valor MET que tiene actualmente cada persona
+	?met rdf:type actgu:MetabolicRate .
+	?persona actgu:hasPhysicalWear ?met .
+	# >> Recuperar el dato de las variables consultadas
+	# -- >> Datos sobre la persona
+	?grupo owl:topDataProperty ?val_grupo .
+	?persona owl:topDataProperty ?val_persona .
+	?clo owl:topDataProperty ?val_clo .
+	?met owl:topDataProperty ?val_met .
+	# -- >> Datos de Confort Térmico
+	?pmvpresenta owl:topDataProperty ?val_pmvpresenta .
+	# >> Recuperar el dato de las variables consultadas
+	BIND (	COALESCE(
+		IF(?val_pmvpresenta = "0", "true", 1/0),
+		"false"	) AS ?aceptable_byreglas) .
+	FILTER ((datatype(?val_pmvpresenta)) = xsd:string) .
+	FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_clo)) = xsd:double) .
+	FILTER ((datatype(?val_met)) = xsd:double)
+}
+
+# Obtener datos como JSON Element - getPMVDataACTGUVersionAsJson(String grupo) {
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_grupo ?val_persona ?val_prioridad ?val_sexo ?val_edad ?val_met ?val_cloviste ?val_pmvpreferido ?val_tempmaxgusta ?val_tempmingusta ?val_pmvpresenta ?val_temperatura ?val_congas ?pvmvalido_byedad ?pvmvalido_bybmi ?aceptable_byreglas ?aceptable_bytemps
+WHERE {
+	# >> Recuperar instancia de un determinado grupo 
+	?grupo rdf:type foaf:Group .
+	?grupo owl:topDataProperty "7a" .
+	# >> Recuperar instancias de las personas relacionadas al grupo
+	?persona rdf:type foaf:Person .
+	?grupo foaf:member ?persona .
+	# >> Recuperar la prioridad de cada persona
+	?prioridad rdf:type actgu:Priority .
+	?persona actgu:isSortOf ?prioridad .
+	# >> Recuperar la información demografica de cada persona
+	?demografico rdf:type actgu:Demographic .
+	?demografico actgu:characterizes ?persona .
+	# -- >> Recuperar y tomar solo el GENERO de la persona
+	?sexo rdf:type actgu:Gender .
+	?demografico actgu:is ?sexo .
+	# -- >> Recuperar y tomar solo la EDAD de la persona
+	?edad rdf:type actgu:Age .
+	?demografico actgu:is ?edad .
+	# >> Recuperar la información antropometrica de cada persona
+	?atropometrico rdf:type actgu:Anthropometry .
+	?atropometrico actgu:characterizes ?persona .
+	?bmi rdf:type actgu:AnthropometricValue .
+	?atropometrico actgu:hasValue ?bmi .
+	?unidadmed rdf:type dul2:UnitOfMeasure .
+	?unidadmed owl:topDataProperty "bmi" .
+	?bmi actgu:isClassifiedBy ?unidadmed .
+	# >> Recuperar el PMV preferido de cada persona
+	?pmvpreferido rdf:type actgu:ThermalComfort .
+	?persona actgu:likes ?pmvpreferido .
+	# >> Recuperar la temperatura maxima preferida por cada persona
+	?tempmaxgusta rdf:type actgu:AmbientCondition .
+	?persona actgu:maximumEnjoy ?tempmaxgusta .
+	# >> Recuperar la temperatura minima preferida por cada persona
+	?tempmingusta rdf:type actgu:AmbientCondition .
+	?persona actgu:minimumEnjoy ?tempmingusta .
+	# >> Recuperar el PMV que tiene actualmente cada persona
+	?pmvpresenta rdf:type actgu:ThermalComfort .
+	?persona actgu:has ?pmvpresenta .
+	# >> Recuperar el MET que tiene actualmente cada persona
+	?met rdf:type actgu:MetabolicRate .
+	?persona actgu:hasPhysicalWear ?met .
+	# >> Recuperar el CLO que viste actualmente cada persona
+	?cloviste rdf:type actgu:InsulationValue .
+	?cloviste actgu:isEquippedBy ?persona .
+	# >> Recuperar la información sobre el sentor de TEMPERATURA
+	?tempproper rdf:type ssn:Property .
+	?tempproper owl:topDataProperty "temperature" .
+	?tempsensor rdf:type ssn:Sensor .
+	?tempsensor ssn:observes ?tempproper .   
+	?tempsenout rdf:type ssn:SensorOutput .
+	?tempsenout ssn:isProducedBy ?tempsensor .
+	?temperatura rdf:type ssn:ObservationValue .
+	?tempsenout ssn:hasValue ?temperatura .	
+	# >> Recuperar la información sobre el sentor de CONCENTRACIÓN DE GAS
+	?cgasproper rdf:type ssn:Property .
+	?cgasproper owl:topDataProperty "gas concentration" .
+	?cgassensor rdf:type ssn:Sensor .
+	?cgassensor ssn:observes ?cgasproper .   
+	?cgassenout rdf:type ssn:SensorOutput .
+	?cgassenout ssn:isProducedBy ?cgassensor .
+	?congas rdf:type ssn:ObservationValue .
+	?cgassenout ssn:hasValue ?congas .
+	# >> Recuperar el dato de las variables consultadas
+	# -- >> Datos sobre la persona
+	?grupo owl:topDataProperty ?val_grupo .
+	?persona owl:topDataProperty ?val_persona .
+	?prioridad owl:topDataProperty ?val_prioridad .
+	?sexo owl:topDataProperty ?val_sexo .
+	?edad owl:topDataProperty ?val_edad .
+	?bmi owl:topDataProperty ?val_bmi  .
+	?met owl:topDataProperty ?val_met .
+	?cloviste owl:topDataProperty ?val_cloviste .
+	# -- >> Datos de Confort Térmico
+	?pmvpreferido owl:topDataProperty ?val_pmvpreferido .
+	?pmvpresenta owl:topDataProperty ?val_pmvpresenta .
+	# -- >> Datos sobre preferencias
+	?tempmaxgusta owl:topDataProperty ?val_tempmaxgusta .
+	?tempmingusta owl:topDataProperty ?val_tempmingusta .
+	# -- >> Datos sobre condiciones ambientales actuales
+	?temperatura owl:topDataProperty ?val_temperatura .
+	?congas owl:topDataProperty ?val_congas .
+	# >> Recuperar el dato de las variables consultadas
+	BIND (	COALESCE(
+				IF(?val_edad > 50 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_edad <= 50 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_edad > 50 && ?val_sexo = "m", "0", 1/0),
+				IF(?val_edad <= 50 && ?val_sexo = "m", "+1", 1/0),
+				"0"
+			) AS ?pvmvalido_byedad) .
+	BIND (	COALESCE(
+				IF(?val_bmi >= 35.0 && ?val_sexo = "h", "-2", 1/0),
+				IF(?val_bmi >= 25.0 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_bmi >= 18.5 && ?val_sexo = "h", "-1", 1/0),
+				IF(?val_bmi >= 35.0 && ?val_sexo = "m", "-1", 1/0),
+				IF(?val_bmi >= 25.0 && ?val_sexo = "m", "0", 1/0),
+				IF(?val_bmi >= 18.5 && ?val_sexo = "m", "1", 1/0),
+				"0"
+			) AS ?pvmvalido_bybmi) .
+	BIND (	COALESCE(
+				IF(?val_congas >= 1000, "false", 1/0),
+				IF(?val_pmvpresenta = ?val_pmvpreferido, "true", 1/0),
+				IF(?val_pmvpresenta = ?pvmvalido_byedad, "true", 1/0),
+				IF(?val_pmvpresenta = ?pvmvalido_bybmi, "true", 1/0),
+				IF( ?pvmvalido_bybmi = "-2" &&
+				    ?val_pmvpresenta = "-1", "true", 1/0),
+				IF(?val_pmvpresenta = "0", "true", 1/0),
+				"false"
+			) AS ?aceptable_byreglas) .
+	BIND (	COALESCE(
+				IF(	?val_congas >= 1000, "false", 1/0),
+				IF(	?val_temperatura <= ?val_tempmaxgusta &&
+					?val_temperatura >= ?val_tempmingusta, "true", 1/0),
+				"false"
+			) AS ?aceptable_bytemps) .
+	FILTER ((datatype(?val_bmi)) = xsd:double) .
+	FILTER ((datatype(?val_met)) = xsd:double) .
+	FILTER ((datatype(?val_cloviste)) = xsd:double) .
+	FILTER ((datatype(?val_pmvpreferido)) = xsd:string) .
+	FILTER ((datatype(?val_pmvpresenta)) = xsd:string) .
+	FILTER ((datatype(?val_tempmaxgusta)) = xsd:double) .
+	FILTER ((datatype(?val_tempmingusta)) = xsd:double) .
+	FILTER ((datatype(?val_temperatura)) = xsd:double) .
+	FILTER ((datatype(?val_congas)) = xsd:double) .
+	FILTER ((datatype(?val_sexo)) = xsd:string) .
+	FILTER ((datatype(?val_edad)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_prioridad)) = xsd:nonNegativeInteger)
+}
+
+# Obtener datos como JSON Element de Medios HVAC's - getHVACsDataAsJson()
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+# Seleccionar variables
+SELECT REDUCED ?val_actuador ?val_estado ?val_tipo
+# Condiciones de consulta
+WHERE {
+        # Recuperar instancia de actuador
+        ?actuador rdf:type actgu:Actuator .
+        # Recuperar instancia de Estado y Tipo
+        ?estado rdf:type actgu:State .
+        ?tipo rdf:type actgu:Type .
+        # Relacionar instancia
+        ?actuador actgu:present ?estado .
+        ?actuador actgu:present ?tipo .
+        # Extraer valor exacto
+        ?actuador owl:topDataProperty ?val_actuador .
+        ?estado owl:topDataProperty ?val_estado .
+        ?tipo owl:topDataProperty ?val_tipo .
+        FILTER ((datatype(?val_tipo)) = xsd:string) .
+        FILTER ((datatype(?val_estado)) = xsd:string) .
+        FILTER (?val_estado = "a" || ?val_estado = "e") .
+        FILTER ((datatype(?val_actuador)) = xsd:nonNegativeInteger) .
+        FILTER (?val_tipo = "puerta" || ?val_tipo = "ventana" || ?val_tipo = "ventilador" || ?val_tipo = "calefactor" || ?val_tipo = "aire acondicionado")
+}
+
+# Obtener datos como JSON Element de Usuarios - getUsrsDataAsJson(String grupo)
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT REDUCED ?val_grupo ?val_persona ?val_sexo ?val_edad ?val_peso_altura ?val_clo ?val_met 
+WHERE {
+	# >> Recuperar instancia de un determinado grupo 
+	?grupo rdf:type foaf:Group .
+	?grupo owl:topDataProperty "7a" .
+	# >> Recuperar instancias de las personas relacionadas al grupo
+	?persona rdf:type foaf:Person .
+	?grupo foaf:member ?persona .
+	# >> Recuperar la información demografica de cada persona
+	?demografico rdf:type actgu:Demographic .
+	?demografico actgu:characterizes ?persona .
+	# -- >> Recuperar y tomar solo el GENERO de la persona
+	?sexo rdf:type actgu:Gender .
+	?demografico actgu:is ?sexo .
+	# -- >> Recuperar y tomar solo la EDAD de la persona
+	?edad rdf:type actgu:Age .
+	?demografico actgu:is ?edad .
+	# >> Recuperar la información antropometrica de cada persona
+	?atropometrico rdf:type actgu:Anthropometry .
+	?atropometrico actgu:characterizes ?persona .
+	# >> Recuperar el MET que tiene actualmente cada persona
+	?met rdf:type actgu:MetabolicRate .
+	?persona actgu:hasPhysicalWear ?met .
+	# >> Recuperar el CLO que viste actualmente cada persona
+	?cloviste rdf:type actgu:InsulationValue .
+	?cloviste actgu:isEquippedBy ?persona .
+	# >> Recuperar el dato de las variables consultadas
+	?grupo owl:topDataProperty ?val_grupo .
+	?persona owl:topDataProperty ?val_persona .
+	?sexo owl:topDataProperty ?val_sexo .
+	?edad owl:topDataProperty ?val_edad .
+	?atropometrico owl:topDataProperty ?val_peso_altura  .
+	?met owl:topDataProperty ?val_met .
+	?cloviste owl:topDataProperty ?val_clo .
+	# >> Recuperar el dato de las variables consultadas
+	FILTER ((datatype(?val_peso_altura)) = xsd:string) .
+	FILTER ((datatype(?val_met)) = xsd:double) .
+	FILTER ((datatype(?val_clo)) = xsd:double) .
+	FILTER ((datatype(?val_sexo)) = xsd:string) .
+	FILTER ((datatype(?val_edad)) = xsd:nonNegativeInteger) .
+	FILTER ((datatype(?val_persona)) = xsd:nonNegativeInteger)
+}

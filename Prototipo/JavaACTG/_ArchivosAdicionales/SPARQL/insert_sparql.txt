@@ -1,0 +1,25 @@
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Seleccionar variables
+SELECT REDUCED ?objeto ?val_objeto ?tipo_dato ?resul_quest
+	
+# Condiciones de consulta
+WHERE {	
+	# Recuperar objetos
+	?objeto rdf:type actgu:Type .
+	?objeto owl:topDataProperty ?val_objeto .
+	BIND (datatype(?val_objeto) AS ?tipo_dato) .
+	BIND ( IF(?val_objeto >= 45, "mayor", "menor") AS ?resul_quest)
+}

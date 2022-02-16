@@ -1,0 +1,84 @@
+# Prefijos base
+PREFIX base: <http://purl.oclc.org/NET/ssnx/ssn>
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul1: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX dul2: <http://www.loa-cnr.it/ontologies/DUL.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Seleccionar variables
+DELETE {
+	?persona ?prioridad ?demografico ?sexo ?edad ?atropometrico ?atropovalue ?pmvpreferido ?pmvpresenta ?tempmaxgusta ?tempmingusta ?met ?cloviste ?ropaviste
+}
+
+# Condiciones de consulta
+WHERE {
+	# Recupera a todas las personas
+	?persona rdf:type foaf:Person .
+	
+	# Recuperar la prioridad de cada persona
+	?prioridad rdf:type actgu:Priority .
+	?prioridad actgu:characterizes ?persona .
+
+	# Recuperar la información demográfica de cada persona
+	?demografico rdf:type actgu:Demographic .
+	?demografico actgu:characterizes ?persona .
+	# >> Solo tomar el GENERO de la persona
+	?sexo rdf:type actgu:Gender .
+	?demografico actgu:is ?sexo .
+	# >> Solo tomar la EDAD de la persona
+	?edad rdf:type actgu:Age .
+	?demografico actgu:is ?edad .
+
+	# Recuperar la información antropométrica de cada persona
+	?atropometrico rdf:type actgu:Anthropometry .
+	?atropometrico actgu:characterizes ?persona .
+	# >> Tomar los valores antropometricos de la persona
+	?atropovalue rdf:type actgu:AnthropometricValue .
+	?atropometrico actgu:hasValue ?atropovalue .
+
+	# Recuperar el PMV preferido de cada persona
+	?pmvpreferido rdf:type actgu:ThermalComfort .
+	?persona actgu:likes ?pmvpreferido .
+
+	# Recuperar el PMV que tiene actualmente cada persona
+	?pmvpresenta rdf:type actgu:ThermalComfort .
+	?persona actgu:has ?pmvpresenta .
+
+	# Recuperar la temperatura máxima preferida por cada persona
+	?tempmaxgusta rdf:type actgu:AmbientCondition .
+	?persona actgu:maximumEnjoy ?tempmaxgusta .
+
+	# Recuperar la temperatura mínima preferida por cada persona
+	?tempmingusta rdf:type actgu:AmbientCondition .
+	?persona actgu:minimumEnjoy ?tempmingusta .
+
+	# Recuperar el MET que tiene actualmente cada persona
+	?met rdf:type actgu:MetabolicRate .
+	?persona actgu:hasPhysicalWear ?met .
+
+	# Recuperar el CLO que viste actualmente cada persona
+	?cloviste rdf:type actgu:InsulationValue .
+	?cloviste actgu:isEquippedBy ?persona .
+
+	# Recuperar el CLO preferido por cada persona
+	?ropaviste rdf:type actgu:Clothes .
+	?ropaviste actgu:isDressedBy ?persona .
+}
+
+
+# Prefijos base
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX actgu: <http://www.msicu.onto/actgu#>
+
+# Seleccionar variables
+DELETE WHERE {
+	# Recuperar el CLO preferido por cada persona
+	?ropaviste rdf:type actgu:Clothes .
+}

@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simulador ACTGU</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- SCRIPTS Bases - Foundation -->
+	<script
+		src="assets/_foundation/js/vendor/jquery.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+	<script
+		src="assets/_foundation/js/vendor/foundation.min.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+
+	<!-- ESTILOS Bases - Foundation -->
+	<link
+		type="text/css"
+		rel="stylesheet"
+		href="assets/_foundation/css/foundation-icons.css" />
+	<link
+		type="text/css"
+		rel="stylesheet"
+		href="assets/_foundation/css/foundation.min.css">
+		
+	<!-- ESTILOS Personales -->
+	<link
+		type="text/css"
+		rel="stylesheet"
+		href="assets/css/index.css">
+</head>
+
+<body>
+
+	<!-- BARRA SUPERIOR -->
+	<div class="top-bar actgu-style-bar">
+		<div class="top-bar-left">
+			<ul class="menu">
+				<li class="menu">
+					<a href="/">
+						<strong>
+							Sistema ACTGU
+						</strong>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- TITULO -->
+	<div class="grid-container actgu-container">
+		<!-- FILA -->
+		<div class="small-12 text-center">
+			<h5 id="ctrl_titulo">
+				Configuración de usuarios
+			</h5>
+		</div>
+	</div>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-1"></div>
+				<div class="small-10">
+					<div class="grid-x">
+						<div class="small-11">
+							<div class="grid-x">
+								<!-- BOTONES -->
+								<div class="small-1"></div>
+								<div class="small-2">
+									<a	id="ctrl_btn_ver"
+										class="button expanded warning">
+										Ver
+										<i	class="fi-book large"></i>
+										<i	id="icon_btn_ver"
+											class="fi-torso large"></i>
+									</a>
+								</div>
+								<div class="small-1"></div>
+								<div class="small-2">
+									<a	id="ctrl_btn_agregar"
+										class="button expanded success">
+										Agregar
+										<i	class="fi-plus large"></i>
+										<i	id="icon_btn_agregar"
+											class="fi-torso large"></i>
+									</a>
+								</div>
+								<div class="small-1"></div>
+								<div class="small-2">
+									<a	id="ctrl_btn_editar"
+										class="button expanded primary">
+										Editar
+										<i	class="fi-pencil large"></i>
+										<i	id="icon_btn_editar"
+											class="fi-torso large"></i>
+									</a>
+								</div>
+								<div class="small-1"></div>
+								<div class="small-2">
+									<a	id="ctrl_btn_eliminar"
+										class="button expanded alert">
+										Eliminar
+										<i	class="fi-minus large"></i>
+										<i	id="icon_btn_eliminar"
+											class="fi-torso large"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <ul class="tabs" data-tabs id="tabs_usuarios_y_grupos">
+        <li class="tabs-title is-active" data-id="panel_usuarios">
+            <a href="#panel_usuarios" aria-selected="true">
+                <strong
+					class="actgu-tab-text">
+					Usuarios
+					<i class="fi-torso large"></i>
+				</strong>
+            </a>
+        </li>
+        <li class="tabs-title" data-id="panel_grupos">
+			<a href="#panel_grupos" data-tabs-target="panel_grupos">
+				<strong
+					class="actgu-tab-text">
+					Grupos
+					<i class="fi-torsos-all large"></i>
+				</strong>
+			</a>
+		</li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs_usuarios_y_grupos">
+        <div class="tabs-panel is-active" id="panel_usuarios">
+			<!-- TABLA PRINCIPAL - USUARIOS -->
+			<div class="small-12">
+				<div class="grid-x actgu-box-titulo">
+					<div class="small-12 actgu-box-fila">
+						<div class="grid-x">
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Etiqueta
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Sexo
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Edad
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Altura
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Peso
+								</label>
+							</div>
+                                                        <div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Rol
+								</label>
+							</div>
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									Vestimenta
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Actividad
+								</label>
+							</div>
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									Grupos
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="small-12">
+				<div id="ctrl_tabla_usuarios"
+					class="grid-x actgu-box">
+                                        
+                                        <!--
+					<div class="small-12 actgu-box-fila">
+						<div class="grid-x">
+                                                        <div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Usuario 001
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Hombre
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									25 años
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									1.72 m
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									55 kg
+								</label>
+							</div>
+                                                        <div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Docente
+								</label>
+							</div>
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									Ropa ligera para verano
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									0.5 met
+								</label>
+							</div>
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									7a, 8a
+								</label>
+							</div>
+						</div>
+					</div>
+					-->
+                                        
+				</div>
+			</div>
+        </div>
+        <div class="tabs-panel" id="panel_grupos">
+			<!-- TABLA PRINCIPAL - GRUPOS -->
+			<div class="small-12">
+				<div class="grid-x actgu-box-titulo">
+					<div class="small-12 actgu-box-fila">
+						<div class="grid-x">
+							<div class="small-3 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Nombre
+								</label>
+							</div>
+							<div class="small-9 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Etiqueta de usuarios miembros
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="small-12">
+				<div id="ctrl_tabla_grupos"
+					class="grid-x actgu-box">
+
+                                        <!--
+					<div class="small-12 actgu-box-fila">
+						<div class="grid-x">
+							<div class="small-3 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									7a
+								</label>
+							</div>
+							<div class="small-9 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55], Docente[H, 25, 1.72, 55]
+								</label>
+							</div>
+						</div>
+					</div>
+					-->
+
+				</div>
+			</div>
+        </div>
+    </div>
+
+	<!-- CONTROLES -->
+	<div class="grid-container actgu-container">
+		<div class="small-12">
+			<div class="grid-x">
+				<div class="small-2"></div>
+				<div class="small-10">
+					<div class="grid-x">
+						<div class="small-1"></div>
+						<div class="small-11">
+							<div class="grid-x">
+								<!-- BOTONES -->
+								<div class="small-3"></div>
+								<div class="small-4">
+									<a	href="configsimulacion.html"
+										id="ctrl_btn_configsimul"
+										class="button expanded secondary">
+										Configurar simulación
+										<i class="fi-wrench large"></i>
+									</a>
+								</div>
+								<div class="small-1"></div>
+								<div class="small-4">
+									<a	href="analizadorconforttermico.html"
+										id="ctrl_btn_analizconterm"
+										class="button expanded secondary">
+										Analizar Confort Térmico
+										<i class="fi-graph-trend large"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- PIE DE PÁGINA -->
+	<div class="grid-x grid-padding-x actgu-style-bar">
+		<div class="cell small-12 align-self-middle">
+			<div class="actgu-align-center">
+				<br/>
+				<p class="actgu-no-margins">
+					leon.blanco@hotmail.com
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+						<img alt="Licencia de Creative Commons"
+							style="border-width:0"
+							src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+					</a>
+				</p>
+				<br/>
+				<p class="actgu-no-margins">
+					Este obra está bajo una<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"> licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional</a>.
+				</p>
+				<br/>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<div class="large reveal"
+		id="vtn_modal_grupo"
+		data-reveal
+		data-close-on-esc="false"
+		data-close-on-click="false">
+		<div class="grid-container actgu-container">
+			<!-- TITULO -->
+			<div class="small-12">
+				<center>
+					<h5	id="ctrl_titulo_grupo"
+						class="text-center">
+						Editar grupo
+					</h5>
+				</center>
+			</div>
+			<div class="small-12">
+				<hr/>
+			</div>
+			<!-- CONTROLES -->
+			<div class="small-12 actgu-disappear">
+				<div class="grid-x">
+					<div class="small-2 align-self-middle ">
+						<h5
+							for="ctrl_input_grupo_number"
+							class="text-right middle actgu-ctrl-label">
+							Grupo:
+						</h5>
+					</div>
+					<div class="small-3 align-self-middle">
+						<input
+							disabled
+							type="number"
+							placeholder="Grupo"
+							id="ctrl_input_grupo_number">
+					</div>
+				</div>
+			</div>
+			<div class="small-12">
+				<div class="grid-x">
+					<div class="small-2 align-self-middle">
+						<label
+							for="ctrl_input_grupo_nombre"
+							class="text-right middle actgu-ctrl-label">
+							Nombre:
+						</label>
+					</div>
+					<div class="small-2 align-self-middle">
+						<input
+							maxlength="20"
+							type="text"
+							id="ctrl_input_grupo_nombre"
+							placeholder="Nombre del grupo">
+					</div>
+				</div>
+			</div>
+                        
+            <div class="small-12">
+				<div class="grid-x">
+					<div class="small-4 align-self-middle">
+						<label
+							class="text-right middle actgu-ctrl-label">
+							Usuarios asignados a este grupo
+						</label>
+					</div>
+				</div>
+			</div>
+                        
+			<!-- TABLA DE USUARIOS -->
+			<div class="small-12">
+				<div class="grid-x actgu-box-titulo">
+					<div class="small-12 actgu-box-fila">
+						<div class="grid-x">
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Sel.
+								</label>
+							</div>
+                                                        
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Etiqueta
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Sexo
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Edad
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Altura
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Peso
+								</label>
+							</div>
+                                                        <div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Rol
+								</label>
+							</div>
+							<div class="small-3 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									Vestimenta
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="small-12">
+				<div id="ctrl_tabla_grupo_usuarios"
+					class="grid-x actgu-box-mdl">
+                                        
+                    <!--
+					<div class="small-12 actgu-box-fila">
+						<div class="grid-x">
+							<div class="small-1 align-self-middle text-center">
+								<input	class="actgu-ctrl-checkbox"
+										type="checkbox">
+							</div>
+							<div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Usuario 001
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Hombre
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									25 años
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									1.72 m
+								</label>
+							</div>
+							<div class="small-1 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									55 kg
+								</label>
+							</div>
+                            <div class="small-2 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label">
+									Docente
+								</label>
+							</div>
+							<div class="small-3 align-self-middle">
+								<label class="text-center middle actgu-ctrl-label actgu-label-truncate">
+									Ropa ligera para verano
+								</label>
+							</div>
+						</div>
+					</div>
+					-->
+                                        
+				</div>
+			</div>
+			<!-- BOTONES -->
+			<div class="small-12">
+				<section class="grid-x">
+					<div class="small-8">
+					</div>
+					<div class="small-2">
+						<input
+							type="submit"
+							id="ctrl_btn_grupo_guardar"
+							class="button expanded success actgu-no-margin-bottom"
+							value="Guardar">
+					</div>
+					<div class="small-2">
+						<input
+							type="submit"
+							id="ctrl_btn_grupo_cancelar"
+							class="button expanded alert actgu-no-margin-bottom"
+							value="Cancelar">
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<div class="large reveal"
+		id="vtn_modal_user"
+		data-reveal
+		data-close-on-esc="false"
+		data-close-on-click="false">
+		<div class="grid-container actgu-container">
+			<!-- TITULO -->
+			<div class="small-12">
+				<center>
+					<h5	id="ctrl_titulo_usuario"
+						class="text-center">
+						Editar usuario
+					</h5>
+				</center>
+			</div>
+			<div class="small-12">
+				<hr/>
+			</div>
+			<!-- CONTROLES -->
+			<div class="small-12 actgu-disappear">
+				<div class="grid-x">
+					<div class="small-2 align-self-middle">
+						<h5
+							for="ctrl_input_user_number"
+							class="text-right middle actgu-ctrl-label">
+							Usuario:
+						</h5>
+					</div>
+					<div class="small-4 align-self-middle">
+						<input
+							disabled
+							type="number"
+							placeholder="Usuario"
+							id="ctrl_input_user_number">
+					</div>
+				</div>
+			</div>
+                                                        
+			<!-- CONTROLES -->
+			<div class="small-12">
+				<div class="grid-x">
+					<!-- PARTE 1 -->
+					<div class="small-8">
+						<section class="grid-x">
+							<!-- MITAD 1 -->
+                                                        <div class="small-6">
+                                                            <div class="grid-x">
+                                                                <div class="small-12">
+                                                                        <div class="grid-x">
+
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_etiqueta"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Etiqueta:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <input
+                                                                                            disabled
+                                                                                            type="text"
+                                                                                            placeholder="Usuario"
+                                                                                            id="ctrl_input_user_etiqueta">
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- ******* -->
+                                                                <div class="small-12">
+                                                                        <div class="grid-x">
+                                                                                <!-- CONTROL 1 -->
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_sl_user_sexo"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Sexo:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <select
+                                                                                                id="ctrl_sl_user_sexo">
+                                                                                                <option value="h">Hombre</option>
+                                                                                                <option value="m">Mujer</option>
+                                                                                        </select>
+                                                                                </div>
+                                                                                <div class="small-2 align-self-middle">
+                                                                                </div>
+                                                                                <!-- CONTROL 2 -->
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_edad"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Edad:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <input
+                                                                                                type="number"
+                                                                                                max="150"
+                                                                                                min="0"
+                                                                                                placeholder="Edad"
+                                                                                                id="ctrl_input_user_edad">
+                                                                                </div>
+                                                                                <div class="small-2 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_edad"
+                                                                                                class="text-left middle actgu-ctrl-label">
+                                                                                                años
+                                                                                        </label>
+                                                                                </div>
+                                                                                <!-- CONTROL 3 -->
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_altura"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Altura:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <input
+                                                                                                type="number"
+                                                                                                max="3"
+                                                                                                min="0"
+                                                                                                placeholder="Altura"
+                                                                                                id="ctrl_input_user_altura">
+                                                                                </div>
+                                                                                <div class="small-2 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_altura"
+                                                                                                class="text-left middle actgu-ctrl-label">
+                                                                                                m
+                                                                                        </label>
+                                                                                </div>
+                                                                                <!-- CONTROL 4 -->
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_peso"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Peso:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <input
+                                                                                                type="number"
+                                                                                                max="200"
+                                                                                                min="0"
+                                                                                                placeholder="Peso"
+                                                                                                id="ctrl_input_user_peso">
+                                                                                </div>
+                                                                                <div class="small-2 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_peso"
+                                                                                                class="text-left middle actgu-ctrl-label">
+                                                                                                kg
+                                                                                        </label>
+                                                                                </div>
+                                                                                <!-- CONTROL 5 -->
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_input_user_bmi"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Índice de masa corporal:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <input
+                                                                                                disabled
+                                                                                                type="number"
+                                                                                                max="500"
+                                                                                                min="0"
+                                                                                                placeholder="Índice de masa corporal"
+                                                                                                id="ctrl_input_user_bmi">
+                                                                                </div>
+                                                                                <div class="small-2 align-self-middle">
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- MITAD 2 -->
+                                                        <div class="small-6 actgu-lineas-laterales">
+                                                            <div class="grid-x">
+                                                                <div class="small-12">
+                                                                        <div class="grid-x">
+
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_sl_user_prioridad"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Rol:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <select
+                                                                                                id="ctrl_sl_user_prioridad">
+                                                                                                <option value="001">Alumno</option>
+                                                                                                <option value="002">Docente</option>
+                                                                                                <!-- <option value="003">Coordinador</option> -->
+                                                                                        </select>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <div class="small-12">
+                                                                        <div class="grid-x">
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_sl_user_clo"
+                                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                                Tipo de ropa vestida:
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-5 align-self-middle">
+                                                                                        <select
+                                                                                                id="ctrl_sl_user_clo">
+                                                                                                <option value="001">Ropa de verano</option>
+                                                                                                <option value="002">Ropa de invierno</option>
+                                                                                        </select>
+                                                                                </div>
+                                                                                <div class="small-2 align-self-middle">
+                                                                                        <label
+                                                                                                for="ctrl_sl_user_clo"
+                                                                                                id="ctrl_sl_user_clo_value"
+                                                                                                class="text-left middle actgu-ctrl-label">
+                                                                                                0.41 clo
+                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="small-4">
+                                                                                </div>
+                                                                                <div class="small-7">
+                                                                                        <p
+                                                                                                class="text-justify actgu-texto-descriptivo"
+                                                                                                id="ctrl_sl_user_clo_descripcion">
+                                                                                                it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                                                                        </p>
+                                                                                </div>
+                                                                                <div class="small-1">
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                
+						</section>
+					</div>
+					<!-- ******* -->
+					<!-- PARTE 2 -->
+					<div class="small-4">
+						<section class="grid-x">
+							<div class="small-12 align-self-middle">
+								<label
+									class="text-center middle actgu-ctrl-label">
+									Grupos a los que pertenece el usuario
+								</label>
+							</div>
+							<!-- TABLA DE GRUPOS -->
+							<div class="small-12">
+								<div class="grid-x actgu-box-titulo">
+									<div class="small-12 actgu-box-fila">
+										<div class="grid-x">
+											<div class="small-2 align-self-middle">
+												<label class="text-center middle actgu-ctrl-label">
+													Sel.
+												</label>
+											</div>
+											<div class="small-10 align-self-middle">
+												<label class="text-center middle actgu-ctrl-label">
+													Grupo
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="small-12">
+								<div id="ctrl_tabla_usuario_grupos"
+									class="grid-x actgu-box-mgrp">
+                                                                        
+                                    <!--
+									<div class="small-12 actgu-box-fila">
+										<div class="grid-x">
+											<div class="small-2 align-self-middle text-center">
+												<input	class="actgu-ctrl-checkbox"
+														type="checkbox">
+											</div>
+											<div class="small-10 align-self-middle">
+												<label class="text-center middle actgu-ctrl-label">
+													7a
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="small-12 actgu-box-fila">
+										<div class="grid-x">
+											<div class="small-2 align-self-middle text-center">
+												<input	class="actgu-ctrl-checkbox"
+														type="checkbox">
+											</div>
+											<div class="small-10 align-self-middle">
+												<label class="text-center middle actgu-ctrl-label">
+													7a
+												</label>
+											</div>
+										</div>
+									</div>
+                                    -->
+                                                                        
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+                        <div class="small-12">
+				<hr/>
+			</div>
+			<!-- CONTROLES -->
+			<div class="small-12">
+				<div class="grid-x">
+					<!-- MITAD 1 -->
+					<div class="small-3">
+						<div class="grid-x">
+							<div class="small-10 align-self-middle">
+								<p
+									class="text-justify middle">
+									Frente a esta temperatura, se tiende a preferir…
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- MITAD 2 -->
+					<div class="small-9">
+						<div class="grid-x">
+                                                        <div class="small-10">
+                                                            <div class="grid-x">
+                                                                <div class="small-6 align-self-middle">
+                                                                        <label
+                                                                                class="text-left middle actgu-ctrl-label">
+                                                                                Más frío
+                                                                        </label>
+                                                                </div>
+                                                                <div class="small-6 align-self-middle">
+                                                                        <label
+                                                                                class="text-right middle actgu-ctrl-label">
+                                                                                Más caliente
+                                                                        </label>
+                                                                </div>  
+                                                            </div>
+                                                        </div>
+                                                        <div class="small-2">
+                                                            <label
+                                                                    class="text-center middle actgu-ctrl-label">
+                                                                    Preferencia
+                                                            </label>
+                                                        </div>
+                                                    
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- CONTROLES -->
+			<div class="small-12">
+				<div class="grid-x">
+					<!-- MITAD 1 -->
+					<div class="small-3">
+						<div class="grid-x">
+							<div class="small-6 align-self-middle">
+								<label
+									for="ctrl_sld_user_condicion_top"
+									class="text-right middle actgu-ctrl-label">
+									Temperatura<sub>fría</sub>:
+								</label>
+							</div>
+							<div class="small-4 align-self-middle">
+								<input
+									disabled
+									type="number"
+									max="50"
+									min="0"
+									placeholder="Temperatura"
+									id="ctrl_sld_user_condicion_top">
+							</div>
+							<div class="small-2 align-self-middle">
+								<label
+									for="ctrl_sld_user_condicion_top"
+									class="text-left middle actgu-ctrl-label">
+									°C
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="small-9">
+                                             <div class="grid-x">
+                                                <div class="small-10 align-self-middle">
+                                                     <input
+							min="0" max="100" value="50"
+							type="range" class="actgu-slider"
+							id="ctrl_sld_user_tendencia_top">
+                                                </div>
+                                                <div class="small-2 align-self-middle">
+                                                        <div class="grid-x actgu-div-in-center">
+                                                            <div class="small-8 align-self-middle">
+                                                                <center>
+                                                                    <input
+                                                                        class="text-center"
+                                                                        disabled
+                                                                        type="text"
+                                                                        placeholder="Tendencia"
+                                                                        id="ctrl_sld_user_tendencia_top_valor">
+                                                                </center>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+					</div>
+					<!-- MITAD 2 -->
+					<div class="small-3">
+						<div class="grid-x">
+
+							<div class="small-6 align-self-middle">
+								<label
+									for="ctrl_sld_user_condicion_bot"
+									class="text-right middle actgu-ctrl-label">
+									Temperatura<sub>cálida</sub>:
+								</label>
+							</div>
+							<div class="small-4 align-self-middle">
+								<input
+									disabled
+									type="number"
+									max="50"
+									min="0"
+									placeholder="Temperatura"
+									id="ctrl_sld_user_condicion_bot">
+							</div>
+							<div class="small-2 align-self-middle">
+								<label
+									for="ctrl_sld_user_condicion_bot"
+									class="text-left middle actgu-ctrl-label">
+									°C
+								</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="small-9">
+                                                <div class="grid-x">
+                                                    <div class="small-10 align-self-middle">
+                                                        <input
+                                                            min="0" max="100" value="50"
+                                                            type="range" class="actgu-slider"
+                                                            id="ctrl_sld_user_tendencia_bot">
+                                                    </div>
+                                                    <div class="small-2 align-self-middle">
+                                                        <div class="grid-x actgu-div-in-center">
+                                                            <div class="small-8 align-self-middle">
+                                                                <center>
+                                                                    <input
+                                                                        class="text-center"
+                                                                        disabled
+                                                                        type="text"
+                                                                        placeholder="Tendencia"
+                                                                        id="ctrl_sld_user_tendencia_bot_valor">
+                                                                </center>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+					</div>
+				</div>
+			</div>
+			<!-- FILA -->
+			<div class="small-12">
+				<section class="grid-x">
+					<div class="small-8">
+					</div>
+					<div class="small-2">
+						<input
+							type="submit"
+							id="ctrl_btn_user_guardar"
+							class="button expanded success actgu-no-margin-bottom"
+							value="Guardar">
+					</div>
+					<div class="small-2">
+						<input
+							type="submit"
+							id="ctrl_btn_user_cancelar"
+							class="button expanded alert actgu-no-margin-bottom"
+							value="Cancelar">
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->
+	<!-- ************************************************ -->	
+
+	<!-- SCRIPTS Personales -->
+	<script
+		src="assets/js/_funciones.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+
+	<script
+		src="assets/js/configusergrup_utilerias.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+        
+        <script
+		src="assets/js/configusergrup_m_usrs.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+        
+	<script
+		src="assets/js/configusergrup_m_grps.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+        
+	<script
+		src="assets/js/configusergrup.js"
+		type="text/javascript"
+		charset="utf-8">
+	</script>
+</body>
+</html>
